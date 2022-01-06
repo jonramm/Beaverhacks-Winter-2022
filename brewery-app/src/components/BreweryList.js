@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import BreweryRow from "./BreweryRow";
 
 function BreweryList({ breweries }) {
-    return (
+  
+  return (
+      <div>
         <table>
             <thead>
                 <tr>
@@ -11,9 +13,11 @@ function BreweryList({ breweries }) {
                 </tr>
             </thead>
             <tbody>
-                {breweries.map((brewery, i) => <BreweryRow data={brewery} key={i} />)}
+              {breweries.map((brewery, i) => <BreweryRow data={brewery} key={i} /> )}
             </tbody>
         </table>
+        
+    </div>
     )
 }
 

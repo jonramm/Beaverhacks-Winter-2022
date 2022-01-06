@@ -1,25 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
-import React, {useState, useEffect} from 'react';
-import BreweryList from './components/BreweryList'
-import Home from './pages/Home';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Breweries from './pages/Breweries';
+import Home from './pages/Home';
 
 function App() {
   
   return (
-    <Router>
-      <Routes>
-        <Route exact path='/' element={< Home />}></Route>
-        <Route exact path='/breweries' element={<Breweries/>}></Route>
-      </Routes>
-    </Router>
+    <div className="App">
+    
+      <Router>
+        <Routes>
+          <Route exact path='/' element={<Home />} />
+          <Route exact path='breweries' element={<Breweries />} />
+        </Routes>
+      </Router>
+    </div>
     
   );
 }
