@@ -27,6 +27,12 @@ function SearchForm() {
         setBreweries(data);
         setIsloaded(true);
         setCorrectCity(data[0].city)
+
+        console.log(isLoaded)
+        console.log(page)
+        console.log(endOfList)
+        console.log(data[0])
+
         if (data.length === 50) {
             setPage(page+1)
         } else {
@@ -55,7 +61,7 @@ function SearchForm() {
         return (
             <div className="container">
                 <h1 className='display-1'>{correctCity} Breweries</h1>
-                <DataCell city={city} />
+                {/* <DataCell city={city} /> */}
                 <BreweryList breweries={breweries} />
                 <button type="button" className="btn btn-primary" onClick={searchBreweries}>More Breweries</button>
                 
@@ -71,8 +77,9 @@ function SearchForm() {
         return (
             <div className="container">
                 <h1 className='display-1'>{correctCity} Breweries</h1>
-                <DataCell city={city} />
+                {/* <DataCell city={city} /> */}
                 <BreweryList breweries={breweries} />
+                <BreweryMapWrapper breweries={breweries} />
             </div>
         )
     }
