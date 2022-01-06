@@ -18,8 +18,11 @@ function Breweries() {
   }, [])
   
   return (
-        <div class="container">
-            <h1>Breweries</h1>
+        <div className="container">
+            <form>
+                
+            </form>
+            <h1 className='display-1'>Breweries</h1>
             <BreweryList breweries={breweries} />
         </div>
     )

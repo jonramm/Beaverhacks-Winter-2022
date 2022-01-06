@@ -5,7 +5,7 @@ function BreweryList({ breweries }) {
   
   return (
       <div>
-        <table className="table">
+        <table className="table table-dark table-striped">
             <thead>
                 <tr>
                     <th scope="col">Name</th>
