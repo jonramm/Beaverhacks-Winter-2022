@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import BreweryList from "./BreweryList";
 import DataCell from "./DataCell";
-// import BreweryMapWrapper from "./BreweryMap";
+import BreweryMapWrapper from "./BreweryMap";
 
 
 function SearchForm() {
