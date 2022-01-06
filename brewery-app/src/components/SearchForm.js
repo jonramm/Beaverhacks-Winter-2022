@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import BreweryList from "./BreweryList";
 import DataCell from "./DataCell";
+// import BreweryMapWrapper from "./BreweryMap";
+
 
 function SearchForm() {
 
@@ -36,7 +38,7 @@ function SearchForm() {
         return (
             <form>
                 <div className="mb-3">
-                    <label for="cityInput" className="form-label">Enter City:</label>
+                    <label htmlFor="cityInput" className="form-label">Enter City:</label>
                     <input type="text" 
                         className="form-control" 
                         id="cityInput" 
@@ -56,6 +58,13 @@ function SearchForm() {
                 <DataCell city={city} />
                 <BreweryList breweries={breweries} />
                 <button type="button" className="btn btn-primary" onClick={searchBreweries}>More Breweries</button>
+                
+                {/* search map section */}
+                <div className='container brewery-map-container'>
+                  <h1 className='display-1'>Brewery Locations</h1>
+                  <BreweryMapWrapper breweries={breweries} />
+                </div>
+        
             </div>
         )
     } else if (endOfList === true) {
