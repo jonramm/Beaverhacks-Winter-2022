@@ -10,6 +10,7 @@ function BreweryList({ breweries }) {
                 <tr>
                     <th>Name</th>
                     <th>Street</th>
+                    <th>Website</th>
                 </tr>
             </thead>
             <tbody>
