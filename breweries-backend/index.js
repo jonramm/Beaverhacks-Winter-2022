@@ -27,7 +27,7 @@ app.get("/api", (req, res)=> {
     })
     response.on("end", ()=> {
       const breweryData = JSON.parse(chunks.join(''));
-      res.status(200).json(breweryData[0].name);
+      res.status(200).json(breweryData);
     })
   })
 })
