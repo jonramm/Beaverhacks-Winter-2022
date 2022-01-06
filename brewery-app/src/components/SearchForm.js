@@ -9,6 +9,7 @@ function SearchForm() {
     const [isLoaded, setIsloaded] = useState(false);
     const [page, setPage] = useState(1);
     const [endOfList, setEndOfList] = useState(false);
+    const [correctCity, setCorrectCity] = useState('');
     
     const searchBreweries = async ()=> {
         const query = {city, page};
@@ -22,6 +23,7 @@ function SearchForm() {
         const data = await response.json();
         setBreweries(data);
         setIsloaded(true);
+        setCorrectCity(data[0].city)
         if (data.length === 50) {
             setPage(page+1)
         } else {
@@ -49,7 +51,7 @@ function SearchForm() {
     } else if (endOfList === false) {
         return (
             <div className="container">
-                <h1 className='display-1'>{city} Breweries</h1>
+                <h1 className='display-1'>{correctCity} Breweries</h1>
                 <BreweryList breweries={breweries} />
                 <button type="button" className="btn btn-primary" onClick={searchBreweries}>More Breweries</button>
             </div>
@@ -57,7 +59,7 @@ function SearchForm() {
     } else if (endOfList === true) {
         return (
             <div className="container">
-                <h1 className='display-1'>Breweries</h1>
+                <h1 className='display-1'>{correctCity} Breweries</h1>
                 <BreweryList breweries={breweries} />
             </div>
         )
