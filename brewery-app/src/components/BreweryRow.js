@@ -1,11 +1,12 @@
 import React from "react";
 
 function BreweryRow({ data }) {
+    let url = data.website_url;
     return (
         <tr>
-            <td>{data.name}</td>
+            <td><a href={url} target="_blank">{data.name}</a></td>
             <td>{data.street}</td>
-            <td>{data.website_url}</td>
+            <td>{data.phone}</td>
         </tr>
     )
 }
