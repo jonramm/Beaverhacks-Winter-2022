@@ -7,9 +7,11 @@ function SearchForm() {
     const [city, setCity] = useState('');
     const [breweries, setBreweries] = useState([]);
     const [isLoaded, setIsloaded] = useState(false);
+    const [page, setPage] = useState(1);
+    const [endOfList, setEndOfList] = useState(false);
     
     const searchBreweries = async ()=> {
-        const query = {city};
+        const query = {city, page};
         const response = await fetch('/api', {
             method: 'POST',
             body: JSON.stringify(query),
@@ -20,6 +22,11 @@ function SearchForm() {
         const data = await response.json();
         setBreweries(data);
         setIsloaded(true);
+        if (data.length === 50) {
+            setPage(page+1)
+        } else {
+            setEndOfList(true);
+        }
     }
 
     if (isLoaded === false) {
@@ -39,7 +46,15 @@ function SearchForm() {
                 <button type="button" className="btn btn-primary" onClick={searchBreweries}>Submit</button>
             </form>
         ) 
-    } else {
+    } else if (endOfList === false) {
+        return (
+            <div className="container">
+                <h1 className='display-1'>Breweries</h1>
+                <BreweryList breweries={breweries} />
+                <button type="button" className="btn btn-primary" onClick={searchBreweries}>More Breweries</button>
+            </div>
+        )
+    } else if (endOfList === true) {
         return (
             <div className="container">
                 <h1 className='display-1'>Breweries</h1>
