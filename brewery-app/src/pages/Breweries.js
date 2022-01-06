@@ -18,7 +18,7 @@ function Breweries() {
   }, [])
   
   return (
-        <div>
+        <div class="container">
             <h1>Breweries</h1>
             <BreweryList breweries={breweries} />
         </div>
