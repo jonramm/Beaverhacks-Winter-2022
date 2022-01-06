@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import BreweryList from "./BreweryList";
+import BreweryMapWrapper from "./BreweryMap";
 
 function SearchForm() {
 
@@ -52,6 +53,13 @@ function SearchForm() {
                 <h1 className='display-1'>Breweries</h1>
                 <BreweryList breweries={breweries} />
                 <button type="button" className="btn btn-primary" onClick={searchBreweries}>More Breweries</button>
+                
+                {/* search map section */}
+                <div className='container brewery-map-container'>
+                  <h1 className='display-1'>Brewery Locations</h1>
+                  <BreweryMapWrapper breweries={breweries} />
+                </div>
+        
             </div>
         )
     } else if (endOfList === true) {
