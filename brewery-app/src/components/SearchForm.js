@@ -33,7 +33,7 @@ function SearchForm() {
         return (
             <form>
                 <div className="mb-3">
-                    <label for="cityInput" className="form-label">Enter City:</label>
+                    <label htmlFor="cityInput" className="form-label">Enter City:</label>
                     <input type="text" 
                         className="form-control" 
                         id="cityInput" 
