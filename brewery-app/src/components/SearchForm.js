@@ -1,7 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import BreweryList from "./BreweryList";
-import BreweryMapWrapper from "./BreweryMap";
+import DataCell from "./DataCell";
+// import BreweryMapWrapper from "./BreweryMap";
+
 
 function SearchForm() {
 
@@ -10,6 +12,7 @@ function SearchForm() {
     const [isLoaded, setIsloaded] = useState(false);
     const [page, setPage] = useState(1);
     const [endOfList, setEndOfList] = useState(false);
+    const [correctCity, setCorrectCity] = useState('');
     
     const searchBreweries = async ()=> {
         const query = {city, page};
@@ -23,6 +26,7 @@ function SearchForm() {
         const data = await response.json();
         setBreweries(data);
         setIsloaded(true);
+        setCorrectCity(data[0].city)
         if (data.length === 50) {
             setPage(page+1)
         } else {
@@ -50,7 +54,8 @@ function SearchForm() {
     } else if (endOfList === false) {
         return (
             <div className="container">
-                <h1 className='display-1'>Breweries</h1>
+                <h1 className='display-1'>{correctCity} Breweries</h1>
+                <DataCell city={city} />
                 <BreweryList breweries={breweries} />
                 <button type="button" className="btn btn-primary" onClick={searchBreweries}>More Breweries</button>
                 
@@ -65,7 +70,8 @@ function SearchForm() {
     } else if (endOfList === true) {
         return (
             <div className="container">
-                <h1 className='display-1'>Breweries</h1>
+                <h1 className='display-1'>{correctCity} Breweries</h1>
+                <DataCell city={city} />
                 <BreweryList breweries={breweries} />
             </div>
         )

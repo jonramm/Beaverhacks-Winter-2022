@@ -10,7 +10,7 @@ function BreweryList({ breweries }) {
                 <tr>
                     <th scope="col">Name</th>
                     <th scope="col">Street</th>
-                    <th scope="col">Website</th>
+                    <th scope="col">Phone</th>
                 </tr>
             </thead>
             <tbody>
