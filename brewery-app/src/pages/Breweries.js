@@ -1,8 +1,8 @@
-import './App.css';
+import '../App.css';
 import React, {useState, useEffect} from 'react';
-import BreweryList from './BreweryList';
+import BreweryList from '../components/BreweryList';
 
-function Home() {
+function Breweries() {
 
     // testing api call
     const [data, setData] = useState(null);
@@ -21,3 +21,5 @@ function Home() {
         </div>
     )
 }
+
+export default Breweries;
