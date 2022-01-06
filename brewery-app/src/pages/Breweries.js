@@ -2,6 +2,8 @@ import '../App.css';
 import React, {useState, useEffect} from 'react';
 import BreweryList from '../components/BreweryList';
 import SearchForm from '../components/SearchForm';
+import Navbar from '../components/pageNavbar';
+
 
 function Breweries() {
 
@@ -19,11 +21,15 @@ function Breweries() {
   }, [])
   
   return (
-        <div className="container">
+        <div>
+            <Navbar />
+            <div className="container">
             <SearchForm />
             {/* <h1 className='display-1'>Breweries</h1>
             <BreweryList breweries={breweries} /> */}
+        </div> 
         </div>
+        
     )
 }
 
