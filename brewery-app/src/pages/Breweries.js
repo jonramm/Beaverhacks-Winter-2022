@@ -5,19 +5,29 @@ import BreweryList from '../components/BreweryList';
 function Breweries() {
 
     // testing api call
-    const [data, setData] = useState(null);
+    const [breweries, setData] = useState(null);
+
+    const loadBreweries = async ()=> {
+        const response = await fetch("/api");
+        const data = await response.json();
+        setData(data);
+    }
 
     useEffect(()=> {
-        fetch("/api")
-            .then((res)=> res.json())
-            .then((data)=> setData(data));
-    }, []);
+        loadBreweries();
+    }, [])
+
+    // useEffect(()=> {
+    //     fetch("/api")
+    //         // .then((res)=> res.json())
+    //         .then((data)=> setData(data));
+    // }, []);
     //
 
     return (
         <div>
             <h1>Breweries</h1>
-            <BreweryList breweries={data}/>
+            <BreweryList breweries={breweries}/>
         </div>
     )
 }

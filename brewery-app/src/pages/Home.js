@@ -1,6 +1,5 @@
 import '../App.css';
 import React, {useState, useEffect} from 'react';
-import BreweryList from '../components/BreweryList';
 import { Link } from 'react-router-dom';
 
 function Home() {

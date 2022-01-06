@@ -9,6 +9,7 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import Breweries from './pages/Breweries';
 
 function App() {
   
@@ -16,7 +17,7 @@ function App() {
     <Router>
       <Routes>
         <Route exact path='/' element={< Home />}></Route>
-        <Route path='breweries'></Route>
+        <Route exact path='/breweries' element={<Breweries/>}></Route>
       </Routes>
     </Router>
     
