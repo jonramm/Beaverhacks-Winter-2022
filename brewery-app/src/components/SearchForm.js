@@ -49,7 +49,7 @@ function SearchForm() {
     } else if (endOfList === false) {
         return (
             <div className="container">
-                <h1 className='display-1'>Breweries</h1>
+                <h1 className='display-1'>{city} Breweries</h1>
                 <BreweryList breweries={breweries} />
                 <button type="button" className="btn btn-primary" onClick={searchBreweries}>More Breweries</button>
             </div>
