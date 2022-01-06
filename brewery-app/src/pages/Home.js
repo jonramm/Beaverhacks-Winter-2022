@@ -2,6 +2,7 @@ import '../App.css';
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/pageNavbar';
+import Button from 'react-bootstrap/Button';
 
 function Home() {
 
@@ -9,7 +10,9 @@ function Home() {
         <div>
             <Navbar />
             <h1>Home Page</h1>
-            <Link to='/breweries'>Go to breweries</Link>
+            <Link to='/breweries'>
+                <Button variant="warning">Go to breweries</Button>
+            </Link>
         </div>
     )
 }
