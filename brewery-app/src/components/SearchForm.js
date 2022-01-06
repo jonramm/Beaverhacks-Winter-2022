@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import BreweryList from "./BreweryList";
+import DataCell from "./DataCell";
 
 function SearchForm() {
 
@@ -52,6 +53,7 @@ function SearchForm() {
         return (
             <div className="container">
                 <h1 className='display-1'>{correctCity} Breweries</h1>
+                <DataCell city={city} />
                 <BreweryList breweries={breweries} />
                 <button type="button" className="btn btn-primary" onClick={searchBreweries}>More Breweries</button>
             </div>
@@ -60,6 +62,7 @@ function SearchForm() {
         return (
             <div className="container">
                 <h1 className='display-1'>{correctCity} Breweries</h1>
+                <DataCell city={city} />
                 <BreweryList breweries={breweries} />
             </div>
         )
