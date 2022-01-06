@@ -5,11 +5,12 @@ function BreweryList({ breweries }) {
   
   return (
       <div>
-        <table>
+        <table className="table table-dark table-striped">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Street</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Street</th>
+                    <th scope="col">Website</th>
                 </tr>
             </thead>
             <tbody>

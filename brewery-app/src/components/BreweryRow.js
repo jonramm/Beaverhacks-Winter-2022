@@ -5,6 +5,7 @@ function BreweryRow({ data }) {
         <tr>
             <td>{data.name}</td>
             <td>{data.street}</td>
+            <td>{data.website_url}</td>
         </tr>
     )
 }
