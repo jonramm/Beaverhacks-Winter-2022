@@ -1,6 +1,7 @@
 import '../App.css';
 import React, {useState, useEffect} from 'react';
 import BreweryList from '../components/BreweryList';
+import SearchForm from '../components/SearchForm';
 
 function Breweries() {
 
@@ -19,11 +20,9 @@ function Breweries() {
   
   return (
         <div className="container">
-            <form>
-                
-            </form>
-            <h1 className='display-1'>Breweries</h1>
-            <BreweryList breweries={breweries} />
+            <SearchForm />
+            {/* <h1 className='display-1'>Breweries</h1>
+            <BreweryList breweries={breweries} /> */}
         </div>
     )
 }
