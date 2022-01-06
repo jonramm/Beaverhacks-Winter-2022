@@ -4,30 +4,23 @@ import BreweryList from '../components/BreweryList';
 
 function Breweries() {
 
-    // testing api call
-    const [breweries, setData] = useState(null);
-
-    const loadBreweries = async ()=> {
-        const response = await fetch("/api");
-        const data = await response.json();
-        setData(data);
-    }
-
-    useEffect(()=> {
-        loadBreweries();
-    }, [])
-
-    // useEffect(()=> {
-    //     fetch("/api")
-    //         // .then((res)=> res.json())
-    //         .then((data)=> setData(data));
-    // }, []);
-    //
-
-    return (
+  const [breweries, setData] = useState([]);
+  
+  const loadBreweries = async ()=> {
+      const response = await fetch("https://api.openbrewerydb.org/breweries");
+      const data = await response.json();
+      console.log(data);
+      setData(data);
+  }
+  
+  useEffect(()=> {
+      loadBreweries();
+  }, [])
+  
+  return (
         <div>
             <h1>Breweries</h1>
-            <BreweryList breweries={breweries}/>
+            <BreweryList breweries={breweries} />
         </div>
     )
 }
