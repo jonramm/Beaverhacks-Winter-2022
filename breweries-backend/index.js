@@ -32,6 +32,28 @@ app.get("/api", (req, res)=> {
 })
 
 // Handles POST Requests from front-end 
+// app.post("/api", async (req, res) => {
+  
+//   // Let server console know backend has received the request 
+//   console.log("Received request. Retrieving info now...");
+  
+//   // Get the city from the search bar on the front end
+//   const city = req.body.city;
+//   const page = req.body.page;
+  
+//   // send GET request to brewery api 
+//   const url = `https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=${page}`;
+  
+//   // Serialize response data and send back to front end 
+//   const response = await axios.get(url);
+//   const data = response.data;
+  
+//   console.log("Request completed.");
+  
+//   res.status(200).json(data);
+  
+// });
+
 app.post("/api", async (req, res) => {
   
   // Let server console know backend has received the request 
@@ -42,15 +64,27 @@ app.post("/api", async (req, res) => {
   const page = req.body.page;
   
   // send GET request to brewery api 
-  const url = `https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=${page}`;
+  // const req1 = `https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=1`;
+  // const url2 = `https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=2`;
+  // const url3 = `https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=3`;
   
-  // Serialize response data and send back to front end 
-  const response = await axios.get(url);
-  const data = response.data;
-  
+  // let data=[]
+  // axios.all([url1, url2, url3]).then(axios.spread((res1, res2, res3)=> {
+  //   console.log(res1)
+  // }))
+
+  let data=[]
+  const req1 = axios.get(`https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=1`);
+  const req2 = axios.get(`https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=2`);
+  const req3 = axios.get(`https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=3`)
+  await axios.all([req1, req2, req3]).then(axios.spread((res1, res2, res3)=> {
+    data = res1.data.concat(res2.data).concat(res3.data);
+  }))
+
   console.log("Request completed.");
+  console.log(data);
   
-  res.status(200).json(data);
+  res.status(200).send(data);
   
 });
 
