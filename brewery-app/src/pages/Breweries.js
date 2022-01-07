@@ -7,18 +7,18 @@ import Navbar from '../components/pageNavbar';
 
 function Breweries() {
 
-  const [breweries, setData] = useState([]);
+//   const [breweries, setData] = useState([]);
   
-  const loadBreweries = async ()=> {
-      const response = await fetch("https://api.openbrewerydb.org/breweries");
-      const data = await response.json();
-      console.log(data);
-      setData(data);
-  }
+//   const loadBreweries = async ()=> {
+//       const response = await fetch("https://api.openbrewerydb.org/breweries");
+//       const data = await response.json();
+//       console.log(data);
+//       setData(data);
+//   }
   
-  useEffect(()=> {
-      loadBreweries();
-  }, [])
+//   useEffect(()=> {
+//       loadBreweries();
+//   }, [])
   
   return (
         <div>
