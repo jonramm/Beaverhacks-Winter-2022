@@ -27,6 +27,9 @@ function SearchForm() {
             },
         });
         const data = await response.json();
+        const numOfBreweries = data[data.length-1].numOfBreweries
+        data.slice(0, -1)
+        console.log(numOfBreweries)
         for (let el of data) {
             setBreweries(data, el);
         }

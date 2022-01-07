@@ -31,7 +31,7 @@ app.get("/api", (req, res)=> {
   })
 })
 
-// Handles POST Requests from front-end 
+// Handles POST Requests from front-end, single axios api call 
 // app.post("/api", async (req, res) => {
   
 //   // Let server console know backend has received the request 
@@ -54,6 +54,7 @@ app.get("/api", (req, res)=> {
   
 // });
 
+// Handles POST Requests from front-end, three bundles axios calls
 app.post("/api", async (req, res) => {
   
   // Let server console know backend has received the request 
@@ -62,16 +63,6 @@ app.post("/api", async (req, res) => {
   // Get the city from the search bar on the front end
   const city = req.body.city;
   const page = req.body.page;
-  
-  // send GET request to brewery api 
-  // const req1 = `https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=1`;
-  // const url2 = `https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=2`;
-  // const url3 = `https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=3`;
-  
-  // let data=[]
-  // axios.all([url1, url2, url3]).then(axios.spread((res1, res2, res3)=> {
-  //   console.log(res1)
-  // }))
 
   let data=[]
   const req1 = axios.get(`https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=1`);
@@ -82,8 +73,11 @@ app.post("/api", async (req, res) => {
   }))
 
   console.log("Request completed.");
-  console.log(data);
-  
+
+  const numOfBreweries = {"numOfBreweries": data.length}
+  data.push(numOfBreweries)
+
+  console.log(data)
   res.status(200).send(data);
   
 });
