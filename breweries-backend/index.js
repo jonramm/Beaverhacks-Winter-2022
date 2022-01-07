@@ -38,10 +38,11 @@ app.post("/api", async (req, res) => {
   console.log("Received request. Retrieving info now...");
   
   // Get the city from the search bar on the front end
-  const query = req.body.city;
+  const city = req.body.city;
+  const page = req.body.page;
   
   // send GET request to brewery api 
-  const url = `https://api.openbrewerydb.org/breweries?per_page=50&by_city=${query}`;
+  const url = `https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=${page}`;
   
   // Serialize response data and send back to front end 
   const response = await axios.get(url);
