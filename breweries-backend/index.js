@@ -3,6 +3,8 @@ import express from 'express';
 import https from 'https';
 import bodyParser from 'body-parser';
 import axios from 'axios';
+import all_the_cities from 'all-the-cities';
+
 // Declare instance of express 
 const app = express();
 
@@ -77,10 +79,38 @@ app.post("/api", async (req, res) => {
   const numOfBreweries = {"numOfBreweries": data.length}
   data.push(numOfBreweries)
 
-  console.log(data)
   res.status(200).send(data);
   
 });
+
+// Endpoint for population gathering
+app.post("/population", (req, res)=> {
+
+  console.log("made it to population endpoint")
+  const city = req.body.correctCity;
+  const state = req.body.state;
+  console.log(city)
+  console.log(state)
+
+  // const cityData = all_the_cities.filter(searchCity => searchCity.name.match(city));
+  // console.log(cityData)
+  // const stateObj = {
+  //   "oregon": "OR"
+  // }
+
+  // let population = 0
+  // for (let el of cityData) {
+  //   if (el.name === city && el.adminCode === stateObj[state]) {
+  //     console.log(el)
+  //     population = el.population
+  //   }
+  // }
+
+  
+  // console.log(stateObj[state])
+  // console.log(population)
+  
+})
 
 // Start Server 
 app.listen(3000, () => {

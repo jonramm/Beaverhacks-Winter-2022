@@ -12,13 +12,12 @@ function SearchForm() {
     const [breweries, setBreweries] = useState([]);
     const [isLoaded, setIsloaded] = useState(false);
     const [page, setPage] = useState(1);
-    const [endOfList, setEndOfList] = useState(false);
     const [correctCity, setCorrectCity] = useState('');
     const [state, setState] = useState('');
+    const [numOfBreweries, setNumOfBreweries] = useState(0);
 
     const searchBreweries = async () => {
         const query = { city, page, state };
-        console.log("State is: " + state)
         const response = await fetch('/api', {
             method: 'POST',
             body: JSON.stringify(query),
@@ -27,23 +26,16 @@ function SearchForm() {
             },
         });
         const data = await response.json();
-        const numOfBreweries = data[data.length-1].numOfBreweries
+        setNumOfBreweries(data[data.length-1].numOfBreweries)
         data.slice(0, -1)
-        console.log(numOfBreweries)
         for (let el of data) {
             setBreweries(data, el);
         }
 
-        // Sets variables for whether we've already searched, the properly formatted city name, whether
-        // we need to call the next page of brewery data, and whether we're at the end of the dataset
+        // Sets variables for whether we've already searched, and the properly formatted city name
         setIsloaded(true);
         setCorrectCity(data[0].city)
-
-        if (data.length === 50) {
-            setPage(page + 1)
-        } else {
-            setEndOfList(true);
-        }
+        console.log(correctCity + " is loaded")
     }
 
     // Renders search bar
@@ -117,19 +109,10 @@ function SearchForm() {
             </form>
         )
 
-    // If we still have data to display we need a 'more breweries button'
-    } else if (endOfList === false) {
-        return (
-            <DisplayBreweries breweries={breweries} correctCity={correctCity} searchBreweries={searchBreweries} />
-        )
-
-    // If we're at the end of the data
-    } else if (endOfList === true) {
+    } else {
         return (
             <div className="container">
-                <h1 className='display-1'>{correctCity} Breweries</h1>
-                {/* <DataCell city={city} /> */}
-                <BreweryList breweries={breweries} />
+                <DisplayBreweries breweries={breweries} correctCity={correctCity} searchBreweries={searchBreweries} numOfBreweries={numOfBreweries} state={state} />
                 <BreweryMapWrapper breweries={breweries} />
             </div>
         )

@@ -4,7 +4,7 @@ import BreweryList from "./BreweryList";
 import DataCell from "./DataCell";
 import BreweryMapWrapper from "./BreweryMap";
 
-function DisplayBreweries({ breweries, correctCity, searchBreweries }) {
+function DisplayBreweries({ breweries, correctCity, searchBreweries, numOfBreweries, state }) {
 
     //scroll to top of screen on re-render
     function scrollToTop() {
@@ -14,9 +14,9 @@ function DisplayBreweries({ breweries, correctCity, searchBreweries }) {
     return (
         <div className="container">
             <h1 className='display-1'>{correctCity} Breweries</h1>
-            {/* <DataCell city={city} /> */}
+            <DataCell numOfBreweries={numOfBreweries} correctCity={correctCity} state={state} />
             <BreweryList breweries={breweries} />
-            <button type="button" className="btn btn-primary" onClick={()=> {searchBreweries();scrollToTop();}}>More Breweries</button>
+            {/* <button type="button" className="btn btn-primary" onClick={()=> {searchBreweries();scrollToTop();}}>More Breweries</button> */}
 
             {/* search map section */}
             <div className='container brewery-map-container'>
