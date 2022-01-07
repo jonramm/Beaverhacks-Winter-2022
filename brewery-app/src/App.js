@@ -1,3 +1,4 @@
+import 'bootswatch/dist/united/bootstrap.min.css'
 import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
