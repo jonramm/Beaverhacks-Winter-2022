@@ -25,38 +25,32 @@ const BreweryMapWrapper = ({ breweries }) => {
   
   // Initialize map on first render 
   useEffect(() => {
-    // Create markers 
-    const breweryIcon = new Feature({
-      geometry: new Point([breweries[0].longitude, breweries[0].latitude]),
-      name: 'Brewery1',
+  
+    // Create a marker for each brewery in "breweries" array 
+    const breweryIcons = breweries.map((brewery) => {
+      // Create Feature 
+      let currentIcon = new Feature({
+        geometry: new Point([brewery.longitude, brewery.latitude]),
+        name: brewery.name,
+      });
+      
+      // Set Icon style 
+      let iconStyle = new Style({
+        image: new Icon({
+          imgSize: [100, 100],
+          src: marker
+        })
+      });
+      
+      // Set style 
+      currentIcon.setStyle(iconStyle);
+      
+      return currentIcon;
     });
-    
-    // Set marker style 
-    var iconStyle = new Style({
-      image: new Icon({
-        imgSize: [100, 100],
-        src: marker
-      })
-    });
-    breweryIcon.setStyle(iconStyle);
-    
-    const breweryIcon2 = new Feature({
-      geometry: new Point([breweries[1].longitude, breweries[1].latitude]),
-      name: 'Brewery2',
-    });
-    
-    // Set marker style 
-    var iconStyle2 = new Style({
-      image: new Icon({
-        imgSize: [100, 100],
-        src: marker
-      })
-    });
-    breweryIcon2.setStyle(iconStyle2);
     
     // Create vector source 
     const vectorSource = new VectorSource({
-      features: [breweryIcon, breweryIcon2]
+      features: breweryIcons
     })
     
     // Create and add vector source layer 
@@ -86,9 +80,6 @@ const BreweryMapWrapper = ({ breweries }) => {
     // Save map and vector layer references to state 
     setMap(initialMap);
     setFeaturesLayer(initialFeaturesLayer);
-    
-    const features = initialFeaturesLayer.getSource().getFeatures()
-    console.log(features)
   }, []);
   
   return (
