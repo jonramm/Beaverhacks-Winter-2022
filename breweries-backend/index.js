@@ -3,6 +3,8 @@ import express from 'express';
 import https from 'https';
 import bodyParser from 'body-parser';
 import axios from 'axios';
+import all_the_cities from 'all-the-cities';
+
 // Declare instance of express 
 const app = express();
 
@@ -31,7 +33,30 @@ app.get("/api", (req, res)=> {
   })
 })
 
-// Handles POST Requests from front-end 
+// Handles POST Requests from front-end, single axios api call 
+// app.post("/api", async (req, res) => {
+  
+//   // Let server console know backend has received the request 
+//   console.log("Received request. Retrieving info now...");
+  
+//   // Get the city from the search bar on the front end
+//   const city = req.body.city;
+//   const page = req.body.page;
+  
+//   // send GET request to brewery api 
+//   const url = `https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=${page}`;
+  
+//   // Serialize response data and send back to front end 
+//   const response = await axios.get(url);
+//   const data = response.data;
+  
+//   console.log("Request completed.");
+  
+//   res.status(200).json(data);
+  
+// });
+
+// Handles POST Requests from front-end, three bundles axios calls
 app.post("/api", async (req, res) => {
   
   // Let server console know backend has received the request 
@@ -40,19 +65,52 @@ app.post("/api", async (req, res) => {
   // Get the city from the search bar on the front end
   const city = req.body.city;
   const page = req.body.page;
-  
-  // send GET request to brewery api 
-  const url = `https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=${page}`;
-  
-  // Serialize response data and send back to front end 
-  const response = await axios.get(url);
-  const data = response.data;
-  
+
+  let data=[]
+  const req1 = axios.get(`https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=1`);
+  const req2 = axios.get(`https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=2`);
+  const req3 = axios.get(`https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=3`)
+  await axios.all([req1, req2, req3]).then(axios.spread((res1, res2, res3)=> {
+    data = res1.data.concat(res2.data).concat(res3.data);
+  }))
+
   console.log("Request completed.");
-  
-  res.status(200).json(data);
+
+  const numOfBreweries = {"numOfBreweries": data.length}
+  data.push(numOfBreweries)
+
+  res.status(200).send(data);
   
 });
+
+// Endpoint for population gathering
+app.post("/population", (req, res)=> {
+
+  console.log("made it to population endpoint")
+  const city = req.body.correctCity;
+  const state = req.body.state;
+  console.log(city)
+  console.log(state)
+
+  // const cityData = all_the_cities.filter(searchCity => searchCity.name.match(city));
+  // console.log(cityData)
+  // const stateObj = {
+  //   "oregon": "OR"
+  // }
+
+  // let population = 0
+  // for (let el of cityData) {
+  //   if (el.name === city && el.adminCode === stateObj[state]) {
+  //     console.log(el)
+  //     population = el.population
+  //   }
+  // }
+
+  
+  // console.log(stateObj[state])
+  // console.log(population)
+  
+})
 
 // Start Server 
 app.listen(3000, () => {
