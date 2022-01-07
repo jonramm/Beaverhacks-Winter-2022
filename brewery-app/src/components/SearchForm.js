@@ -17,7 +17,6 @@ function SearchForm() {
     const [state, setState] = useState('');
 
     const searchBreweries = async () => {
-
         const query = { city, page, state };
         console.log("State is: " + state)
         const response = await fetch('/api', {
@@ -32,13 +31,10 @@ function SearchForm() {
             setBreweries(data, el);
         }
 
+        // Sets variables for whether we've already searched, the properly formatted city name, whether
+        // we need to call the next page of brewery data, and whether we're at the end of the dataset
         setIsloaded(true);
         setCorrectCity(data[0].city)
-
-        // console.log(isLoaded)
-        // console.log(page)
-        // console.log(endOfList)
-        // console.log(data.length)
 
         if (data.length === 50) {
             setPage(page + 1)
@@ -47,7 +43,7 @@ function SearchForm() {
         }
     }
 
-    
+    // Renders search bar
     if (isLoaded === false) {
         return (
             <form>
@@ -117,23 +113,14 @@ function SearchForm() {
                 <button type="button" className="btn btn-primary" onClick={searchBreweries}>Submit</button>
             </form>
         )
+
+    // If we still have data to display we need a 'more breweries button'
     } else if (endOfList === false) {
         return (
             <DisplayBreweries breweries={breweries} correctCity={correctCity} searchBreweries={searchBreweries} />
-            // <div className="container">
-            //     <h1 className='display-1'>{correctCity} Breweries</h1>
-            //     {/* <DataCell city={city} /> */}
-            //     <BreweryList breweries={breweries} />
-            //     <button type="button" className="btn btn-primary" onClick={searchBreweries}>More Breweries</button>
-
-            //     {/* search map section */}
-            //     <div className='container brewery-map-container'>
-            //         <h1 className='display-1'>Brewery Locations</h1>
-            //         <BreweryMapWrapper breweries={breweries} />
-            //     </div>
-
-            // </div>
         )
+
+    // If we're at the end of the data
     } else if (endOfList === true) {
         return (
             <div className="container">
