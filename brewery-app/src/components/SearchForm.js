@@ -4,6 +4,7 @@ import BreweryList from "./BreweryList";
 import DataCell from "./DataCell";
 import BreweryMapWrapper from "./BreweryMap";
 import DisplayBreweries from "./DisplayBreweries";
+import SelectUSState from 'react-select-us-states';
 
 
 function SearchForm() {
@@ -14,10 +15,12 @@ function SearchForm() {
     const [page, setPage] = useState(1);
     const [endOfList, setEndOfList] = useState(false);
     const [correctCity, setCorrectCity] = useState('');
+    const [state, setState] = useState('');
 
     const searchBreweries = async () => {
 
-        const query = { city, page };
+        const query = { city, page, state };
+        console.log("State is: " + state)
         const response = await fetch('/api', {
             method: 'POST',
             body: JSON.stringify(query),
@@ -45,8 +48,6 @@ function SearchForm() {
         }
     }
 
-
-
     if (isLoaded === false) {
         return (
             <form>
@@ -59,6 +60,10 @@ function SearchForm() {
                         placeholder="Gondor"
                         value={city}
                         onChange={e => setCity(e.target.value)} />
+                    <select value={state} onChange={e => setState(e.target.value)}>
+                        <option value="oregon">Oregon</option>
+                        <option value="washington">Washington</option>
+                    </select>
                     <div id="cityHelp" className="form-text">See the breweries in your favorite cities!</div>
                 </div>
                 <button type="button" className="btn btn-primary" onClick={searchBreweries}>Submit</button>
