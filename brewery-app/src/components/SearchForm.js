@@ -1,10 +1,9 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BreweryList from "./BreweryList";
 import DataCell from "./DataCell";
 import BreweryMapWrapper from "./BreweryMap";
 import DisplayBreweries from "./DisplayBreweries";
-import SelectUSState from 'react-select-us-states';
 
 
 function SearchForm() {
@@ -48,6 +47,7 @@ function SearchForm() {
         }
     }
 
+    
     if (isLoaded === false) {
         return (
             <form>
@@ -61,6 +61,15 @@ function SearchForm() {
                         value={city}
                         onChange={e => setCity(e.target.value)} />
                     <select value={state} onChange={e => setState(e.target.value)}>
+                        <option value="alabama">Alabama</option>
+                        <option value="alaska">Alaska</option>
+                        <option value="arizona">Arizona</option>
+                        <option value="arkansas">Arkansas</option>
+                        <option value="california">California</option>
+                        <option value="colorado">Colorado</option>
+                        <option value="connecticut">Connecticut</option>
+                        <option value="delaware">Delaware</option>
+                        <option value="florida">Florida</option>
                         <option value="oregon">Oregon</option>
                         <option value="washington">Washington</option>
                     </select>
