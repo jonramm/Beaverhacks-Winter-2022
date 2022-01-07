@@ -7,14 +7,15 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 function pageNavbar() {
     return (
         <Navbar bg="primary" expand="lg" variant="dark">
-            <Container>
+            <Container fluid>
                 <Navbar.Brand href="/">Brewery Finder</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
+                <Navbar.Toggle aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" />
+                <Navbar.Collapse id="navbarColor01">
                     <Nav className="me-auto">
-                        <Nav.Link href="/">Home</Nav.Link>
+                        <Nav.Link href="/" active>Home</Nav.Link>
                         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                             <NavDropdown.Item href="/breweries">Search By City</NavDropdown.Item>
+                            <div class="dropdown-divider"></div>
                             <NavDropdown.Item href="">Brewery Data</NavDropdown.Item>
                             {/* <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item> */}
                             {/* <NavDropdown.Divider />

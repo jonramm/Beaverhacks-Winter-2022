@@ -9,10 +9,12 @@ function Home() {
     return (
         <div>
             <Navbar />
-            <h1>Home Page</h1>
-            <Link to='/breweries'>
-                <Button variant="warning">Go to breweries</Button>
-            </Link>
+            <div className="HomePageText">
+                <h1>Home Page</h1>
+                <Link to='/breweries'>
+                    <Button variant="primary">Go to breweries</Button>
+                </Link>
+            </div>
         </div>
     )
 }
