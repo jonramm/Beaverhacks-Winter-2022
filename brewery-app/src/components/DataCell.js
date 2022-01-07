@@ -1,44 +1,51 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Table from 'react-bootstrap/Table'
 
-function DataCell ({city}) {
+function DataCell ({numOfBreweries, correctCity, state}) {
 
-    const [data, setData] = useState([]);
-    const [endOfFile, setEndOfFile] = useState(false);
-    const [page, setPage] = useState(1);
+    const [perCapita, setPerCapita] = useState(0);
+    const [population, setPopulation] = useState(0);
 
-    const getData = async (page)=> {
-        const query = {city, page};
-        const response = await fetch('/api/dataCell', {
+    // Attempted population request
+    const searchPopulation = async () => {
+        console.log("search pop " + correctCity)
+        console.log("search pop " + state)
+        const query = {correctCity, state};
+        const response = await fetch('/population', {
             method: 'POST',
             body: JSON.stringify(query),
             headers: {
                 'Content-Type': 'application/json',
             },
         });
-        const breweryData = await response.json();
-        for (let el of breweryData) {
-            setData(data + el);
-        }
-        if (data.length % 20 !== 0) {
-            
-            setEndOfFile(true);
-        } else {
-            setPage(page+1)
-        }
-
-        
+        const data = await response.json();
+        setPerCapita(numOfBreweries / data.population)
+        console.log(perCapita)
     }
 
-    if (endOfFile === false) {
-        // getData();
-    }
+    // useEffect(()=> {
+    //     searchPopulation();
+    // }, []);
     
-
 
     return (
         <div>
-            <h2>data goes here</h2>
+            <h3>Data</h3>
+            <Table striped bordered hover size="sm">
+                <thead>
+                    <tr>
+                        <th>Total Breweries</th>
+                        <th>Per Capita</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{numOfBreweries}</td>
+                        <td>{perCapita}</td>
+                    </tr>
+                </tbody>
+            </Table>
         </div>
     )
 }
