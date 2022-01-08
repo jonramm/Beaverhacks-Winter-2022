@@ -12,6 +12,7 @@ import XYZ from 'ol/source/XYZ';
 import 'ol/ol.css';
 import marker from './map-marker.png';
 import Overlay from 'ol/Overlay';
+import { defaults, ZoomSlider } from 'ol/control';
 
 const BreweryMapWrapper = ({ breweries }) => {
   
@@ -115,8 +116,11 @@ const BreweryMapWrapper = ({ breweries }) => {
         center: [breweries[0].longitude, breweries[0].latitude],
         zoom: 12
       }),
-      controls: []
     });
+    
+    // Add zoom control 
+    const zoomSlider = new ZoomSlider();
+    initialMap.addControl(zoomSlider);
     
     // Create Popup 
     const popup = new Overlay({
