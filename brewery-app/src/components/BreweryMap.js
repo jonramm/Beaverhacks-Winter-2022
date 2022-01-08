@@ -11,18 +11,58 @@ import { fromLonLat } from 'ol/proj';
 import XYZ from 'ol/source/XYZ';
 import 'ol/ol.css';
 import marker from './map-marker.png';
+import Overlay from 'ol/Overlay';
 
 const BreweryMapWrapper = ({ breweries }) => {
   
   // Set initial state - used to track references to OpenLayers 
   const [map, setMap] = useState();
+  const [popup, setPopup] = useState();
   const [featuresLayer, setFeaturesLayer] = useState();
   const [selectedCoord, setSelectedCoord] = useState();
   
   // Keep a ref to div element - OpenLayers will render into this div 
   const mapElement = useRef();
+  const popupElement = useRef();
   
+  const mapRef = useRef();
+  mapRef.current = map;
   
+  // Event handler for Map clicks: Shows popup if a brewery is clicked 
+  const handleMapClick = function (event) {
+    
+    // Get the brewery if it's been clicked 
+    const feature = mapRef.current.forEachFeatureAtPixel(event.pixel, function(feature) {
+      return feature;
+    });
+    
+    // If a brewery has been clicked...
+    if (feature) {
+      
+      // Get the popup OpenLayers element 
+      let popupOverlay = event.map.overlays_.array_[0];
+      popupOverlay.element.style.display = "block";
+      // Set the position on the map of the popup 
+      popupOverlay.setPosition(event.coordinate);
+      
+      // Set the text to be the name of the brewery 
+      popupOverlay.element.innerText = feature.get('name');
+      popupOverlay.element.style.background = 'white';
+      popupOverlay.element.style.padding = "10px";
+      
+      // Add address as a child node 
+      let addressElement = document.createElement("p");
+      addressElement.innerText = feature.get('street');
+      popupOverlay.element.appendChild(addressElement);
+      
+    } 
+    // Remove the brewery popup if somewhere else on the map is clicked 
+    else {
+      let popupOverlay = event.map.overlays_.array_[0];
+      popupOverlay.element.style.display = 'none';
+    }
+  }
+
   // Initialize map on first render 
   useEffect(() => {
   
@@ -32,6 +72,7 @@ const BreweryMapWrapper = ({ breweries }) => {
       let currentIcon = new Feature({
         geometry: new Point([brewery.longitude, brewery.latitude]),
         name: brewery.name,
+        street: brewery.street,
       });
       
       // Set Icon style 
@@ -75,16 +116,28 @@ const BreweryMapWrapper = ({ breweries }) => {
         zoom: 12
       }),
       controls: []
-    })
+    });
+    
+    // Create Popup 
+    const popup = new Overlay({
+      element: popupElement.current,
+      positioning: 'bottom-center',
+      stopEvent: false,
+    });
+    setPopup(popup);
+    initialMap.addOverlay(popup);
     
     // Save map and vector layer references to state 
     setMap(initialMap);
     setFeaturesLayer(initialFeaturesLayer);
+    
+    // Event handler 
+    initialMap.on('click', handleMapClick);
   }, []);
   
   return (
     <div ref={mapElement} className="search-map">
-      
+      <div ref={popupElement} className="popup"></div>
     </div>
   )
 }
