@@ -155,9 +155,7 @@ app.post("/population", (req, res)=> {
       population = el.population
     }
   }
-
   res.send({"population": population})
-  
 })
 
 // Start Server 

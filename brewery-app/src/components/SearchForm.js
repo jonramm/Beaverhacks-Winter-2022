@@ -4,8 +4,8 @@ import BreweryList from "./BreweryList";
 import DataCell from "./DataCell";
 import BreweryMapWrapper from "./BreweryMap";
 import DisplayBreweries from "./DisplayBreweries";
-
-
+import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 function SearchForm() {
 
@@ -42,17 +42,17 @@ function SearchForm() {
     // Renders search bar
     if (isLoaded === false) {
         return (
-            <form>
+            <form class="search-form">
                 <div className="mb-3">
                     <label htmlFor="cityInput" className="form-label">Enter City:</label>
                     <input type="text"
-                        className="form-control"
+                        class="form-control input-bar"
                         id="cityInput"
                         aria-describedby="cityHelp"
-                        placeholder="Gondor"
+                        placeholder="Beervana"
                         value={city}
                         onChange={e => setCity(e.target.value)} />
-                    <select value={state} onChange={e => setState(e.target.value)}>
+                    <select class="state-dropdown" value={state} onChange={e => setState(e.target.value)}>
                         <option value="alabama">Alabama</option>
                         <option value="alaska">Alaska</option>
                         <option value="arizona">Arizona</option>

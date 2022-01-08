@@ -3,15 +3,10 @@ import { useState } from "react";
 import BreweryList from "./BreweryList";
 import DataCell from "./DataCell";
 import BreweryMapWrapper from "./BreweryMap";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 
 function DisplayBreweries({ breweries, correctCity, searchBreweries, numOfBreweries, state }) {
-
-    //scroll to top of screen on re-render
-    function scrollToTop() {
-        window.scroll({ top: 0, behavior: 'smooth' })
-    }
 
     const stateObj = {
         "alabama": "AL",
@@ -67,6 +62,11 @@ function DisplayBreweries({ breweries, correctCity, searchBreweries, numOfBrewer
         "wyoming": "WY"
     }
 
+    //scroll to top of screen on re-render
+    function scrollToTop() {
+        window.scroll({ top: 0, behavior: 'smooth' })
+    }
+
     return (
         <div className="container">
             <div class="brewery-results-header">
@@ -82,10 +82,18 @@ function DisplayBreweries({ breweries, correctCity, searchBreweries, numOfBrewer
             </div>
 
             <BreweryList breweries={breweries} />
-            <Link to='/breweries'>
-                <Button variant="primary">Search Again!</Button>
-            </Link>
-
+            <div class="button">
+                <Button variant="primary" onClick={scrollToTop}>Back To Top</Button>
+            </div>
+            <div class="button">
+                <a href="/breweries">
+                    <Button variant="primary">Search Again</Button>
+                </a>
+            {/* <Link to="/breweries">
+                <Button variant="primary">Search Again</Button>
+            </Link> */}
+            </div>
+            
             {/* search map section */}
             <div className='container brewery-map-container'>
                 <h1 className='display-1'>Brewery Locations</h1>
