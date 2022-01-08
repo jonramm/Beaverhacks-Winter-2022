@@ -8,6 +8,7 @@ import Button from 'react-bootstrap/Button';
 
 function DisplayBreweries({ breweries, correctCity, searchBreweries, numOfBreweries, state }) {
 
+    // state name/abbreviation table
     const stateObj = {
         "alabama": "AL",
         "alaska": "AK",
@@ -62,41 +63,38 @@ function DisplayBreweries({ breweries, correctCity, searchBreweries, numOfBrewer
         "wyoming": "WY"
     }
 
-    //scroll to top of screen on re-render
+    //scroll to top of screen function
     function scrollToTop() {
         window.scroll({ top: 0, behavior: 'smooth' })
     }
 
     return (
         <div className="container">
-            <div class="brewery-results-header">
+            <div className="brewery-results-header">
                 <div className="row">
-                    <div class="col header-col-left">
+                    <div className="col header-col-left">
                         <h1 className='display-1'>{correctCity}, {stateObj[state]}</h1>
                         <h1 className='display-1'>Breweries</h1>
                     </div>
-                    <div class="col header-col-right brewery-data-cell">
+                    <div className="col header-col-right brewery-data-cell">
                         <DataCell numOfBreweries={numOfBreweries} correctCity={correctCity} state={state} />
                     </div>
                 </div>
             </div>
-
             <BreweryList breweries={breweries} />
-            <div class="button">
+            <div className="button">
                 <Button variant="primary" onClick={scrollToTop}>Back To Top</Button>
             </div>
-            <div class="button">
+            <div className="button">
                 <a href="/breweries">
                     <Button variant="primary">Search Again</Button>
                 </a>
             </div>
-            
             {/* search map section */}
             <div className='container brewery-map-container'>
                 <h1 className='display-1'>Brewery Locations</h1>
                 <BreweryMapWrapper breweries={breweries} />
             </div>
-
         </div>
     )
 

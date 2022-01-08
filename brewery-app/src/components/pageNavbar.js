@@ -13,7 +13,7 @@ function PageNavbar ({ page }) {
         <Navbar bg="primary" expand="lg" variant="dark">
             <Container fluid>
                 <Navbar.Brand href="/">HopHub</Navbar.Brand>
-                <img class="hopper" src={hopper}></img>
+                <img className="hopper" src={hopper}></img>
                 <Navbar.Toggle aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" />
                 <Navbar.Collapse id="navbarColor01">
                     <Nav className="me-auto">
