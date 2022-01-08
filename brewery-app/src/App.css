@@ -10,6 +10,23 @@
   transform: translate(-50%, -50%);
 }
 
+/* Brewery Search Results Styles */
+.brewery-results-header {
+  padding: 5%;
+}
+
+.header-col-left {
+  padding-right: 3%;
+}
+
+.header-col-right {
+  padding-left: 3%;
+}
+
+.brewery-data-cell {
+  align-items: baseline;
+}
+
 /* Brewery Map Styles */
 .brewery-map-container {
   width: 1000px;

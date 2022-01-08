@@ -65,11 +65,12 @@ app.post("/api", async (req, res) => {
   // Get the city from the search bar on the front end
   const city = req.body.city;
   const page = req.body.page;
+  const state = req.body.state;
 
   let data=[]
-  const req1 = axios.get(`https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=1`);
-  const req2 = axios.get(`https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=2`);
-  const req3 = axios.get(`https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=3`)
+  const req1 = axios.get(`https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=1&by_state=${state}`);
+  const req2 = axios.get(`https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=2&by_state=${state}`);
+  const req3 = axios.get(`https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=3&by_state=${state}`)
   await axios.all([req1, req2, req3]).then(axios.spread((res1, res2, res3)=> {
     data = res1.data.concat(res2.data).concat(res3.data);
   }))
@@ -156,11 +157,11 @@ app.post("/population", (req, res)=> {
     }
   }
 
-  const adjustedPop = Math.round(population / 50000)
+  // const adjustedPop = Math.round(population / 50000)
 
   console.log(stateObj[state])
-  console.log(adjustedPop)
-  res.send({"population": adjustedPop})
+  console.log(population)
+  res.send({"population": population})
   
 })
 

@@ -6,6 +6,7 @@ import BreweryMapWrapper from "./BreweryMap";
 import DisplayBreweries from "./DisplayBreweries";
 
 
+
 function SearchForm() {
 
     const [city, setCity] = useState('');
