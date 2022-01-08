@@ -3,7 +3,6 @@ import { useState } from "react";
 import BreweryList from "./BreweryList";
 import DataCell from "./DataCell";
 import BreweryMapWrapper from "./BreweryMap";
-import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 
 function DisplayBreweries({ breweries, correctCity, searchBreweries, numOfBreweries, state }) {
@@ -82,9 +81,7 @@ function DisplayBreweries({ breweries, correctCity, searchBreweries, numOfBrewer
             </div>
 
             <BreweryList breweries={breweries} />
-            <Link to='/breweries'>
-                <Button variant="primary">Search Again!</Button>
-            </Link>
+            <Button variant="primary" onClick={scrollToTop}>Back To Top</Button>
 
             {/* search map section */}
             <div className='container brewery-map-container'>
