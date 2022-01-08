@@ -1,7 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cabin&family=Nunito:wght@400;800&family=Saira+Condensed:wght@100&display=swap');
+
+body {
+  font-family: 'Saira Condensed', sans-serif;
+  font-size: 1.5rem;
+}
+
+h1 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  font-size: 5rem;
+}
+
+h2 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
 .App {
   text-align: center;
 }
 
+.btn {
+  font-size: 2rem;
+}
+
+.navbar {
+  margin-bottom: 3rem;
+}
+
+.container {
+  margin-left: 15%;
+}
+
+/* Navbar */
+.navbar-brand {
+  font-size: 2rem;
+  font-weight: bold;
+  padding-left: 3%;
+}
+
+.hopper {
+  width: 260px;
+  height: auto;
+  margin: -50px;
+  margin-bottom: -70px;
+}
+
+/* Home Page */
 .HomePageText {
   margin: 0;
   position: absolute;
@@ -15,6 +61,25 @@
   max-width: 100%;
   object-fit: cover;
   opacity: 0.4;
+}
+
+.icon-img {
+  width: 420px;
+  height: auto;
+  margin-top: -40px;
+}
+
+.welcome-div {
+  padding-top: 5%;
+  padding-bottom: 10%;
+}
+
+.page-button {
+  font-family: 'Nunito', sans-serif;
+}
+
+.home-row {
+  margin-right: 5%;
 }
 
 /* Brewery Search Results Styles */
@@ -66,4 +131,17 @@ h1.display-1 {
 .search-map {
   width: 100%;
   height: 800px;
+}
+
+/* Footer */
+
+.footer {
+  position: relative;
+  overflow: hidden;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
+  margin-top: 40px;
 }

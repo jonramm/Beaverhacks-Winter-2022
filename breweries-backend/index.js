@@ -56,7 +56,7 @@ app.get("/api", (req, res)=> {
   
 // });
 
-// Handles POST Requests from front-end, three bundles axios calls
+// Handles POST Requests from front-end, three bundled axios calls
 app.post("/api", async (req, res) => {
   
   // Let server console know backend has received the request 
@@ -83,6 +83,23 @@ app.post("/api", async (req, res) => {
   res.status(200).send(data);
   
 });
+
+// Endpoint for breweries by geolocation
+app.post("/geo", (req, res) => {
+  // Let server console know backend has received the request 
+  console.log("Received request. Retrieving info now...");
+  
+  // Get the city from the search bar on the front end
+  const latitude = req.body.latitude;
+  const longitude = req.body.longitude;
+  const url = `https://api.openbrewerydb.org/breweries?per_page=20&by_dist=${latitude},${longitude}`
+
+  axios.get(url)
+    .then((response)=> {
+      let data = response.data
+    })
+
+  })
 
 // Endpoint for population gathering
 app.post("/population", (req, res)=> {
