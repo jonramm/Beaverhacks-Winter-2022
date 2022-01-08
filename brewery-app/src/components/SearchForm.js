@@ -19,8 +19,9 @@ function SearchForm() {
 
     // Sends brewery search request to backend
     const searchBreweries = async () => {
-        const query = { city, page, state };
-        const response = await fetch('/api', {
+        if (city !== '' && state !== ''){
+            const query = { city, page, state };
+            const response = await fetch('/api', {
             method: 'POST',
             body: JSON.stringify(query),
             headers: {
@@ -35,11 +36,16 @@ function SearchForm() {
         for (let el of data) {
             setBreweries(data, el);
         }
-
         // Sets variables for whether we've already searched, and the properly formatted city name
         setIsloaded(true);
         setCorrectCity(data[0].city)
-        console.log(correctCity + " is loaded")
+        } else {
+            if (city === '' && state === '') {
+                alert("Please enter a city and state!")
+            } else if (city !== '' && state == '') {
+                alert("Please add a state to your search!")
+            } else {alert("Please add a city to your search!")}
+        }      
     }
 
     // Renders search bar
