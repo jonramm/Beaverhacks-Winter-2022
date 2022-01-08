@@ -16,7 +16,7 @@ function pageNavbar() {
                         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                             <NavDropdown.Item href="/breweries">Search By City</NavDropdown.Item>
                             <div class="dropdown-divider"></div>
-                            <NavDropdown.Item href="">Brewery Data</NavDropdown.Item>
+                            <NavDropdown.Item href="/about">About</NavDropdown.Item>
                             {/* <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item> */}
                             {/* <NavDropdown.Divider />
                             <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}

@@ -27,6 +27,23 @@
   align-items: baseline;
 }
 
+.button {
+  margin: 2%;
+}
+
+/* Search Bar Styles */
+.form-label {
+  font-size: 2rem;
+}
+
+.search-form {
+  padding-top: 5%;
+}
+
+.state-dropdown {
+  margin-top: 1%;
+}
+
 /* Brewery Map Styles */
 .brewery-map-container {
   width: 1000px;
