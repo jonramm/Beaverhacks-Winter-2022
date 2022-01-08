@@ -1,5 +1,5 @@
 # HopHub
-[HopHub Logo](./brewery-app/src/images/hophub-icon.png)
+[HopHub Logo](https://github.com/jonramm/Beaverhacks-Winter-2022/blob/main/brewery-app/src/images/hophub-icon.png?raw=true)
 
 So now we have the app set up as essentially two apps: a react front-end application and an express back-end REST api. 
 
