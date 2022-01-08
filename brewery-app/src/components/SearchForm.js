@@ -114,6 +114,7 @@ function SearchForm() {
     } else {
         return (
             <div className="container">
+                <SearchForm></SearchForm>
                 <DisplayBreweries breweries={breweries} correctCity={correctCity} searchBreweries={searchBreweries} numOfBreweries={numOfBreweries} state={state} />
             </div>
         )
