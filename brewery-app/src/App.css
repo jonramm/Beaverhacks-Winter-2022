@@ -8,6 +8,13 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: black;
+}
+
+.BackgroundImage {
+  max-width: 100%;
+  object-fit: cover;
+  opacity: 0.4;
 }
 
 /* Brewery Search Results Styles */
@@ -23,12 +30,18 @@
   padding-left: 3%;
 }
 
-.brewery-data-cell {
-  margin-top: 6%;
-}
-
 .button {
   margin: 2%;
+}
+
+.brewery-data-cell {
+
+  margin-top: 2%;
+}
+
+h1.display-1 {
+
+  border-bottom: 3px solid #bbb;
 }
 
 /* Search Bar Styles */
@@ -48,6 +61,7 @@
 .brewery-map-container {
   width: 1000px;
   padding: 0px;
+  margin-top: 1%;
 }
 .search-map {
   width: 100%;

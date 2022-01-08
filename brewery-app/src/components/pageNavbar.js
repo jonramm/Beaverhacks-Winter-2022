@@ -3,12 +3,21 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import logo from './beer.png';
 
 function pageNavbar() {
     return (
         <Navbar bg="primary" expand="lg" variant="dark">
             <Container fluid>
-                <Navbar.Brand href="/">Brewery Finder</Navbar.Brand>
+                <Navbar.Brand href="/">
+                    <img
+                        alt=""
+                        src={logo}
+                        width="30"
+                        height="30"
+                        className="d-inline-block align-top"
+                    />{' '}
+                Brewery Finder</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" />
                 <Navbar.Collapse id="navbarColor01">
                     <Nav className="me-auto">

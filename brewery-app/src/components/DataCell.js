@@ -31,7 +31,7 @@ function DataCell ({numOfBreweries, correctCity, state}) {
     
     return (
         <div class="brewery-data-cell">
-            <h3>Data</h3>
+            <h3>Number of Breweries</h3>
             <Table striped bordered hover size="sm">
                 <thead>
                     <tr>

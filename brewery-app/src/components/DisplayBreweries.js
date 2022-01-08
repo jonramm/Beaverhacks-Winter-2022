@@ -70,34 +70,34 @@ function DisplayBreweries({ breweries, correctCity, searchBreweries, numOfBrewer
     return (
         <div className="container">
             <div class="brewery-results-header">
+            <h1 className='display-1'>{correctCity}, {stateObj[state]} - Breweries</h1>
+            {/* search map section */}
+            <div className='container brewery-map-container'>
+                <h3> Brewery Locations</h3>
+                <BreweryMapWrapper breweries={breweries} />
+            </div>
                 <div className="row">
-                    <div class="col header-col-left">
-                        <h1 className='display-1'>{correctCity}, {stateObj[state]}</h1>
-                        <h1 className='display-1'>Breweries</h1>
-                    </div>
                     <div class="col header-col-right brewery-data-cell">
                         <DataCell numOfBreweries={numOfBreweries} correctCity={correctCity} state={state} />
                     </div>
                 </div>
             </div>
 
+            <h3>Brewery List</h3>
             <BreweryList breweries={breweries} />
-            <div class="button">
-                <Button variant="primary" onClick={scrollToTop}>Back To Top</Button>
-            </div>
-            <div class="button">
-                <a href="/breweries">
+
+            <div className="row">
+                <div class="col header-col-left button">
+                    <Button variant="primary" onClick={scrollToTop}>Back To Top</Button>
+                </div>
+                <div class="col header-col-right button">
+                    <a href="/breweries">
+                        <Button variant="primary">Search Again</Button>
+                    </a>
+                {/* <Link to="/breweries">
                     <Button variant="primary">Search Again</Button>
-                </a>
-            {/* <Link to="/breweries">
-                <Button variant="primary">Search Again</Button>
-            </Link> */}
-            </div>
-            
-            {/* search map section */}
-            <div className='container brewery-map-container'>
-                <h1 className='display-1'>Brewery Locations</h1>
-                <BreweryMapWrapper breweries={breweries} />
+                </Link> */}
+                </div>
             </div>
 
         </div>
