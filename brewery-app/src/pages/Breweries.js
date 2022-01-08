@@ -7,14 +7,14 @@ import Navbar from '../components/pageNavbar';
 function Breweries() {
 
     return (
-        <div class="page-container">
-            <div class="content-wrap">
+        <div className="page-container">
+            <div className="content-wrap">
                 <Navbar />
                 <div className="container">
                     <SearchForm />
                 </div>
             </div>
-            <div class="footer bg-primary">
+            <div className="footer bg-primary">
                 <h3 id="footerText">© Our team 2022</h3>
             </div>
         </div>

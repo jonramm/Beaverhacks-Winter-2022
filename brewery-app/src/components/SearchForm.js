@@ -19,55 +19,55 @@ function SearchForm() {
 
     // Sends brewery search request to backend
     const searchBreweries = async () => {
-        if (city !== '' && state !== ''){
+        if (city !== '' && state !== '') {
             const query = { city, page, state };
             const response = await fetch('/api', {
-            method: 'POST',
-            body: JSON.stringify(query),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-        const data = await response.json();
-        // numOfBreweries sent back at end of brewery list
-        setNumOfBreweries(data[data.length - 1].numOfBreweries)
-        data.slice(0, -1)
-        // pushes all individuaL entries to breweries state variable
-        for (let el of data) {
-            setBreweries(data, el);
-        }
-        // Sets variables for whether we've already searched, and the properly formatted city name
-        setIsloaded(true);
-        setCorrectCity(data[0].city)
+                method: 'POST',
+                body: JSON.stringify(query),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            const data = await response.json();
+            // numOfBreweries sent back at end of brewery list
+            setNumOfBreweries(data[data.length - 1].numOfBreweries)
+            data.slice(0, -1)
+            // pushes all individuaL entries to breweries state variable
+            for (let el of data) {
+                setBreweries(data, el);
+            }
+            // Sets variables for whether we've already searched, and the properly formatted city name
+            setIsloaded(true);
+            setCorrectCity(data[0].city)
         } else {
             if (city === '' && state === '') {
                 alert("Please enter a city and state!")
             } else if (city !== '' && state == '') {
                 alert("Please add a state to your search!")
-            } else {alert("Please add a city to your search!")}
-        }      
+            } else { alert("Please add a city to your search!") }
+        }
     }
 
     // Renders search bar
     if (isLoaded === false) {
         return (
             <div>
-                <div class="row">
-                    <div class="col">
-                        <img class="stein-img" src={stein}></img>
+                <div className="row">
+                    <div className="col">
+                        <img className="stein-img" src={stein}></img>
                     </div>
-                    <div class="col">
-                        <form class="search-form">
+                    <div className="col">
+                        <form className="search-form">
                             <div className="mb-3">
                                 <label htmlFor="cityInput" className="form-label"><h2>Enter City:</h2></label>
                                 <input type="text"
-                                    class="form-control input-bar"
+                                    className="form-control input-bar"
                                     id="cityInput"
                                     aria-describedby="cityHelp"
                                     placeholder="Beervana"
                                     value={city}
                                     onChange={e => setCity(e.target.value)} />
-                                <select class="state-dropdown" value={state} onChange={e => setState(e.target.value)}>
+                                <select className="state-dropdown" value={state} onChange={e => setState(e.target.value)}>
                                     <option value=""></option>
                                     <option value="alabama">Alabama</option>
                                     <option value="alaska">Alaska</option>
@@ -126,14 +126,11 @@ function SearchForm() {
                             <button type="button" className="btn btn-primary" onClick={searchBreweries}>Submit</button>
                         </form>
                     </div>
-
                 </div>
-
             </div>
-
         )
 
-    // Displays breweries after search completes
+        // Displays breweries after search completes
     } else {
         return (
             <div className="container">
@@ -141,7 +138,6 @@ function SearchForm() {
             </div>
         )
     }
-
 }
 
 export default SearchForm;
