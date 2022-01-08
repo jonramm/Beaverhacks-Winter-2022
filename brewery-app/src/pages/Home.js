@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import axios from 'axios'
 import BreweryList from '../components/BreweryList';
 import icon from '../images/hophub-icon.png'
+import BreweryListHomePage from '../components/BreweryListHomePage';
 
 function Home() {
 
@@ -31,35 +32,34 @@ function Home() {
         setBreweries(res.data)
     }
 
+    // Call data get functions on render
     useEffect(() => {
         getData()
         searchBreweries()
     }, [latitude, longitude])
 
     return (
-        <div>
-            <Navbar page={page} />
-
-            <div>
-                <div class="row home-row">
-                    <div class="welcome-div col-4">
-                        <h1 class="header-text">HopHub</h1>
-                        <img class="icon-img" src={icon}></img>
+        <div className="page-container">
+            <Navbar page={page}/>
+            <div className="content-wrap">
+                <div className="row home-row">
+                    <div className="welcome-div col-4">
+                        <img className="icon-img" src={icon}></img>
                         <br />
-                        <div class="page-button">
+                        <div className="page-button">
                             <Link to='/breweries'>
                                 <Button variant="primary">Search By City</Button>
                             </Link>
                         </div>
                     </div>
-                    <div class="col-8 ">
+                    <div className="col-8 ">
                         <h2>Breweries Close To You:</h2>
-                        <BreweryList breweries={breweries} />
+                        <BreweryListHomePage breweries={breweries} />
                     </div>
                 </div>
             </div>
-            <div class="footer bg-primary">
-                <h3>© Our team 2022</h3>
+            <div className="footer bg-primary">
+                <h3 id="footerText">© Our team 2022</h3>
             </div>
         </div>
     )

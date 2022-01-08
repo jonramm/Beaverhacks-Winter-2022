@@ -5,7 +5,7 @@ function About() {
     const page = "About";
     return (
         <div className="page-container">
-            <Navbar />
+            <Navbar page={page} />
             <div className="content-wrap">
     
             </div>
