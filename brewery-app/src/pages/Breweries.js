@@ -1,35 +1,26 @@
 import '../App.css';
-import React, {useState, useEffect} from 'react';
-import BreweryList from '../components/BreweryList';
+import React from 'react';
 import SearchForm from '../components/SearchForm';
 import Navbar from '../components/pageNavbar';
 
 
 function Breweries() {
 
-  const [breweries, setData] = useState([]);
-  
-  const loadBreweries = async ()=> {
-      const response = await fetch("https://api.openbrewerydb.org/breweries");
-      const data = await response.json();
-      console.log(data);
-      setData(data);
-  }
-  
-  useEffect(()=> {
-      loadBreweries();
-  }, [])
-  
-  return (
-        <div>
-            <Navbar />
-            <div className="container">
-            <SearchForm />
-            {/* <h1 className='display-1'>Breweries</h1>
-            <BreweryList breweries={breweries} /> */}
-        </div> 
+    const page = "Breweries";
+
+    return (
+        <div className="page-container">
+            <div className="content-wrap">
+                <Navbar page={page} />
+                <div className="container">
+                    <SearchForm />
+                </div>
+            </div>
+            <div className="footer bg-primary">
+                <h3 id="footerText">© Our team 2022</h3>
+            </div>
         </div>
-        
+
     )
 }
 

@@ -1,38 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cabin&family=Nunito:wght@400;800&family=Saira+Condensed:wght@100&display=swap');
+
+body {
+  font-family: 'Saira Condensed', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: antiquewhite;
+}
+
+h1 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  font-size: 5rem;
+}
+
+h2 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+h3 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+a {
+  color: white;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn {
+  font-size: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar {
+  margin-bottom: 5rem;
 }
 
-.App-header {
-  background-color: #282c34;
+.page-container {
+  position: relative;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.content-wrap {
+  padding-bottom: 5rem;
+}
+
+/* Navbar */
+.navbar-brand {
+  font-size: 2rem;
+  font-weight: bold;
+  padding-left: 3%;
+}
+
+.hopper {
+  width: 260px;
+  height: auto;
+  margin: -50px;
+  margin-bottom: -70px;
+}
+
+/* Home Page */
+.HomePageText {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon-img {
+  width: 420px;
+  height: auto;
+  margin-top: -40px;
+}
+
+.welcome-div {
+  padding-top: 5%;
+  padding-bottom: 10%;
+}
+
+.page-button {
+  font-family: 'Nunito', sans-serif;
+}
+
+.home-row {
+  margin-right: 5%;
+}
+
+/* Brewery Search Results Styles */
+.brewery-results-header {
+  padding: 5%;
+}
+
+.header-col-left {
+  padding-right: 3%;
+}
+
+.header-col-right {
+  padding-left: 3%;
+}
+
+.brewery-data-cell {
+  margin-top: 6%;
+}
+
+.button {
+  margin: 2%;
+}
+
+.brewery-table {
+  font-size: 1.3rem;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.table {
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+tr:nth-child(even) {
+  background-color: #005017;
+}
+
+tr:nth-child(odd) {
+  background-color: #009f1b;
+}
+
+/* Search Bar Styles */
+.form-label {
+  font-size: 2rem;
+}
+
+.search-form {
+  padding-top: 5%;
+}
+
+.state-dropdown {
+  margin-top: 1%;
+}
+
+/* Brewery Map Styles */
+.brewery-map-container {
+  width: 1000px;
+  padding: 0px;
+}
+.search-map {
+  width: 100%;
+  height: 800px;
+}
+
+.stein-img {
+  width: 400px;
+  height: auto;
+}
+
+/* Footer */
+
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  height: 3rem;
+  padding: 5px;
+}
+
+#footerText {
+  font-family: 'Saira Condensed', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
 }
