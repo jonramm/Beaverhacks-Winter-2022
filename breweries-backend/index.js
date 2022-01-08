@@ -92,23 +92,75 @@ app.post("/population", (req, res)=> {
   console.log(city)
   console.log(state)
 
-  // const cityData = all_the_cities.filter(searchCity => searchCity.name.match(city));
-  // console.log(cityData)
-  // const stateObj = {
-  //   "oregon": "OR"
-  // }
+  const cityData = all_the_cities.filter(searchCity => searchCity.name.match(city));
+  console.log(cityData)
+  const stateObj = {
+    "alabama": "AL",
+    "alaska": "AK",
+    "arizona": "AZ",
+    "arkansas": "AR",
+    "california": "CA",
+    "colorado": "CO",
+    "connecticut": "CT",
+    "delaware": "DE",
+    "district of columbia": "DC",
+    "florida": "FL",
+    "georgia": "GA",
+    "hawaii": "HI",
+    "idaho": "ID",
+    "illinois": "IL",
+    "indiana": "IN",
+    "iowa": "IA",
+    "kansas": "KS",
+    "kentucky": "KY",
+    "louisiana": "LA",
+    "maine": "ME",
+    "maryland": "MD",
+    "massachusetts": "MA",
+    "michigan": "MI",
+    "minnesota": "MN",
+    "mississippi": "MS",
+    "missouri": "MO",
+    "montana": "MT",
+    "nebraska": "NE",
+    "nevada": "NV",
+    "new hampshire": "NH",
+    "new jersey": "NJ",
+    "new mexico": "NM",
+    "new york": "NY",
+    "north carolina": "NC",
+    "north dakota": "ND",
+    "ohio": "OH",
+    "oklahoma": "OK",
+    "oregon": "OR",
+    "pennsylvania": "PA",
+    "rhode island": "RI",
+    "south carolina": "SC",
+    "south dakota": "SD",
+    "tennessee": "TN",
+    "texas": "TX",
+    "utah": "UT",
+    "vermont": "VT",
+    "virginia": "VA",
+    "washington": "WA",
+    "west virginia": "WV",
+    "wisconsin": "WI",
+    "wyoming": "WY"
+  }
 
-  // let population = 0
-  // for (let el of cityData) {
-  //   if (el.name === city && el.adminCode === stateObj[state]) {
-  //     console.log(el)
-  //     population = el.population
-  //   }
-  // }
+  let population = 0
+  for (let el of cityData) {
+    if (el.name == city && el.adminCode === stateObj[state]) {
+      console.log(el)
+      population = el.population
+    }
+  }
 
-  
-  // console.log(stateObj[state])
-  // console.log(population)
+  const adjustedPop = Math.round(population / 50000)
+
+  console.log(stateObj[state])
+  console.log(adjustedPop)
+  res.send({"population": adjustedPop})
   
 })
 
