@@ -89,9 +89,6 @@ function DisplayBreweries({ breweries, correctCity, searchBreweries, numOfBrewer
                 <a href="/breweries">
                     <Button variant="primary">Search Again</Button>
                 </a>
-            {/* <Link to="/breweries">
-                <Button variant="primary">Search Again</Button>
-            </Link> */}
             </div>
             
             {/* search map section */}

@@ -36,13 +36,12 @@ function Home() {
     }, [latitude, longitude])
 
     return (
-        <div>
+        <div class="page-container">
             <Navbar />
 
-            <div>
+            <div class="content-wrap">
                 <div class="row home-row">
                     <div class="welcome-div col-4">
-                        <h1 class="header-text">HopHub</h1>
                         <img class="icon-img" src={icon}></img>
                         <br />
                         <div class="page-button">
@@ -58,7 +57,7 @@ function Home() {
                 </div>
             </div>
             <div class="footer bg-primary">
-                <h3>© Our team 2022</h3>
+                <h3 id="footerText">© Our team 2022</h3>
             </div>
         </div>
     )
