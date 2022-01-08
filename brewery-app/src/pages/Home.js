@@ -5,7 +5,8 @@ import Navbar from '../components/pageNavbar';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios'
 import BreweryList from '../components/BreweryList';
-import icon from '../images/hophub-icon.png'
+import icon from '../images/hophub-icon.png';
+import bar from '../images/bar.jpg';
 
 function Home() {
 
@@ -38,9 +39,10 @@ function Home() {
     return (
         <div>
             <Navbar />
-            <div>
-                <div class="row home-row">
-                    <div class="welcome-div col-4">
+            <div class="home-content">
+                <div class="home-row">
+                    <img class="background-image" src={bar}></img>
+                    <div class="welcome-div">
                         <h1 class="header-text">HopHub</h1>
                         <img class="icon-img" src={icon}></img>
                         <br />
@@ -50,7 +52,7 @@ function Home() {
                             </Link>
                         </div>
                     </div>
-                    <div class="col-8 ">
+                    <div class="brewery-list">
                         <h2>Breweries Close To You:</h2>
                         <BreweryList breweries={breweries} />
                     </div>

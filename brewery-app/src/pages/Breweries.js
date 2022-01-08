@@ -12,7 +12,7 @@ function Breweries() {
             <Navbar />
             <div className="container">
             <SearchForm />
-        </div> 
+            </div> 
         </div>
         
     )
