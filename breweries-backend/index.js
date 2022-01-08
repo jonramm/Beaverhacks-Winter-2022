@@ -152,15 +152,10 @@ app.post("/population", (req, res)=> {
   let population = 0
   for (let el of cityData) {
     if (el.name == city && el.adminCode === stateObj[state]) {
-      console.log(el)
       population = el.population
     }
   }
 
-  // const adjustedPop = Math.round(population / 50000)
-
-  console.log(stateObj[state])
-  console.log(population)
   res.send({"population": population})
   
 })
