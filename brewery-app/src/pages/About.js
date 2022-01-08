@@ -21,7 +21,7 @@ function About() {
                     <div className="col about-box-left p-3 bg-light">
                         <h3><u>Jon Ramm</u></h3>
                         <img className="about-img" src={jonImg}></img>
-                        <p><a className="personal-site" href="jonramm.com" target="_blank">Visit my website!</a></p>
+                        <p><a className="personal-site" href="https://www.jonramm.com" target="_blank">Visit my website!</a></p>
                         <p>Favorite Style: IPA</p>
                     </div>
                     <div className="col about-box-left p-3 bg-light">
