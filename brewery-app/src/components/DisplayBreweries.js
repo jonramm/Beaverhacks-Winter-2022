@@ -73,8 +73,8 @@ function DisplayBreweries({ breweries, correctCity, searchBreweries, numOfBrewer
             <div className="brewery-results-header">
                 <div className="row">
                     <div className="col header-col-left">
-                        <h1 className='display-1'>{correctCity}, {stateObj[state]}</h1>
-                        <h1 className='display-1'>Breweries</h1>
+                        <h1>{correctCity}, {stateObj[state]}</h1>
+                        <h1>Breweries</h1>
                     </div>
                     <div className="col header-col-right brewery-data-cell">
                         <DataCell numOfBreweries={numOfBreweries} correctCity={correctCity} state={state} />
@@ -92,7 +92,7 @@ function DisplayBreweries({ breweries, correctCity, searchBreweries, numOfBrewer
             </div>
             {/* search map section */}
             <div className='container brewery-map-container'>
-                <h1 className='display-1'>Brewery Locations</h1>
+                <h1>Brewery Locations</h1>
                 <BreweryMapWrapper breweries={breweries} />
             </div>
         </div>
