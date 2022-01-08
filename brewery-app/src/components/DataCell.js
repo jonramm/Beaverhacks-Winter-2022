@@ -8,7 +8,7 @@ function DataCell ({numOfBreweries, correctCity, state}) {
     const [population, setPopulation] = useState(0);
 
     // Attempted population request
-    const searchPopulation = async () => {
+    const searchPopulation = async (correctCity, state) => {
         console.log("search pop " + correctCity)
         console.log("search pop " + state)
         const query = {correctCity, state};
@@ -20,15 +20,12 @@ function DataCell ({numOfBreweries, correctCity, state}) {
             },
         });
         const data = await response.json();
-        setPerCapita(numOfBreweries / data.population)
+        setPerCapita(Math.round(numOfBreweries / data.population))
         console.log(perCapita)
     }
 
-    // useEffect(()=> {
-    //     searchPopulation();
-    // }, []);
+    searchPopulation(correctCity, state)
     
-
     return (
         <div>
             <h3>Data</h3>

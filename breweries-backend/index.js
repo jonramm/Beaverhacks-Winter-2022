@@ -92,23 +92,25 @@ app.post("/population", (req, res)=> {
   console.log(city)
   console.log(state)
 
-  // const cityData = all_the_cities.filter(searchCity => searchCity.name.match(city));
-  // console.log(cityData)
-  // const stateObj = {
-  //   "oregon": "OR"
-  // }
+  const cityData = all_the_cities.filter(searchCity => searchCity.name.match(city));
+  console.log(cityData)
+  const stateObj = {
+    "illinois": "IL",
+    "north carolina": "NC"
+  }
 
-  // let population = 0
-  // for (let el of cityData) {
-  //   if (el.name === city && el.adminCode === stateObj[state]) {
-  //     console.log(el)
-  //     population = el.population
-  //   }
-  // }
+  let population = 0
+  for (let el of cityData) {
+    if (el.name === city && el.adminCode === stateObj[state]) {
+      console.log(el)
+      population = el.population
+    }
+  }
 
-  
-  // console.log(stateObj[state])
-  // console.log(population)
+  const adjustedPop = Math.round(population / 50000)
+
+  console.log(adjustedPop)
+  res.send({"population": adjustedPop})
   
 })
 
