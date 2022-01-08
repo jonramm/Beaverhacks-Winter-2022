@@ -60,6 +60,7 @@ function SearchForm() {
                         <option value="colorado">Colorado</option>
                         <option value="connecticut">Connecticut</option>
                         <option value="delaware">Delaware</option>
+                        <option value="district of columbia">District of Columbia</option>
                         <option value="florida">Florida</option>
                         <option value="georgia">Georgia</option>
                         <option value="hawaii">Hawaii</option>

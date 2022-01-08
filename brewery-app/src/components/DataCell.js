@@ -20,7 +20,10 @@ function DataCell ({numOfBreweries, correctCity, state}) {
             },
         });
         const data = await response.json();
-        setPerCapita(Math.round(numOfBreweries / data.population))
+        if (data.population > 0) {
+            setPerCapita(Math.round(numOfBreweries / data.population))
+        } else {setPerCapita("N/A")}
+        
         console.log(perCapita)
     }
 
@@ -33,7 +36,7 @@ function DataCell ({numOfBreweries, correctCity, state}) {
                 <thead>
                     <tr>
                         <th>Total Breweries</th>
-                        <th>Per Capita</th>
+                        <th>Per 50,000 Residents</th>
                     </tr>
                 </thead>
                 <tbody>
