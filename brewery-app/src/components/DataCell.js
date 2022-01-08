@@ -4,13 +4,11 @@ import Table from 'react-bootstrap/Table'
 
 function DataCell ({numOfBreweries, correctCity, state}) {
 
+    // perCapita is really per 50,000
     const [perCapita, setPerCapita] = useState(0);
-    const [population, setPopulation] = useState(0);
 
-    // Attempted population request
+    // Population request sent to backend
     const searchPopulation = async (correctCity, state) => {
-        console.log("search pop " + correctCity)
-        console.log("search pop " + state)
         const query = {correctCity, state};
         const response = await fetch('/population', {
             method: 'POST',
@@ -23,8 +21,6 @@ function DataCell ({numOfBreweries, correctCity, state}) {
         if (data.population > 0) {
             setPerCapita(Math.round(numOfBreweries * 50000 / data.population))
         } else {setPerCapita("N/A")}
-        
-        console.log(perCapita)
     }
 
     searchPopulation(correctCity, state)

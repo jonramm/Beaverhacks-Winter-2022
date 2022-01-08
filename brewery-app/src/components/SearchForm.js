@@ -5,7 +5,6 @@ import DataCell from "./DataCell";
 import BreweryMapWrapper from "./BreweryMap";
 import DisplayBreweries from "./DisplayBreweries";
 import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
 import stein from '../images/beer-stein.png'
 
 function SearchForm() {
@@ -18,6 +17,7 @@ function SearchForm() {
     const [state, setState] = useState('');
     const [numOfBreweries, setNumOfBreweries] = useState(0);
 
+    // Sends brewery search request to backend
     const searchBreweries = async () => {
         const query = { city, page, state };
         const response = await fetch('/api', {
@@ -28,8 +28,10 @@ function SearchForm() {
             },
         });
         const data = await response.json();
+        // numOfBreweries sent back at end of brewery list
         setNumOfBreweries(data[data.length - 1].numOfBreweries)
         data.slice(0, -1)
+        // pushes all individuaL entries to breweries state variable
         for (let el of data) {
             setBreweries(data, el);
         }
@@ -125,6 +127,7 @@ function SearchForm() {
 
         )
 
+    // Displays breweries after search completes
     } else {
         return (
             <div className="container">
