@@ -4,6 +4,7 @@ import https from 'https';
 import bodyParser from 'body-parser';
 import axios from 'axios';
 import all_the_cities from 'all-the-cities';
+import path from 'path';
 
 // Declare instance of express 
 const app = express();
@@ -147,6 +148,14 @@ app.post("/population", (req, res)=> {
   }
   res.send({"population": population})
 })
+
+// For production build
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 // Start Server 
 app.listen(3000, () => {
