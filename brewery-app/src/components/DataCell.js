@@ -26,7 +26,7 @@ function DataCell ({numOfBreweries, correctCity, state}) {
     searchPopulation(correctCity, state)
     
     return (
-        <div class="brewery-data-cell">
+        <div className="brewery-data-cell">
             <Table striped bordered hover size="sm">
                 <thead>
                     <tr>
