@@ -113,7 +113,6 @@ function SearchForm() {
         return (
             <div className="container">
                 <DisplayBreweries breweries={breweries} correctCity={correctCity} searchBreweries={searchBreweries} numOfBreweries={numOfBreweries} state={state} />
-                <BreweryMapWrapper breweries={breweries} />
             </div>
         )
     }
