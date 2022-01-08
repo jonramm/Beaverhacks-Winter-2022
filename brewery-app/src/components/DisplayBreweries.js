@@ -8,6 +8,7 @@ import Button from 'react-bootstrap/Button';
 
 function DisplayBreweries({ breweries, correctCity, searchBreweries, numOfBreweries, state }) {
 
+    // state name/abbreviation table
     const stateObj = {
         "alabama": "AL",
         "alaska": "AK",
@@ -62,7 +63,7 @@ function DisplayBreweries({ breweries, correctCity, searchBreweries, numOfBrewer
         "wyoming": "WY"
     }
 
-    //scroll to top of screen on re-render
+    //scroll to top of screen function
     function scrollToTop() {
         window.scroll({ top: 0, behavior: 'smooth' })
     }
@@ -80,7 +81,6 @@ function DisplayBreweries({ breweries, correctCity, searchBreweries, numOfBrewer
                     </div>
                 </div>
             </div>
-
             <BreweryList breweries={breweries} />
             <div class="button">
                 <Button variant="primary" onClick={scrollToTop}>Back To Top</Button>
@@ -90,13 +90,11 @@ function DisplayBreweries({ breweries, correctCity, searchBreweries, numOfBrewer
                     <Button variant="primary">Search Again</Button>
                 </a>
             </div>
-            
             {/* search map section */}
             <div className='container brewery-map-container'>
                 <h1 className='display-1'>Brewery Locations</h1>
                 <BreweryMapWrapper breweries={breweries} />
             </div>
-
         </div>
     )
 

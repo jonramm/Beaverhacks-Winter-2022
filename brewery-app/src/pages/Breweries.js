@@ -1,6 +1,5 @@
 import '../App.css';
-import React, { useState, useEffect } from 'react';
-import BreweryList from '../components/BreweryList';
+import React from 'react';
 import SearchForm from '../components/SearchForm';
 import Navbar from '../components/pageNavbar';
 

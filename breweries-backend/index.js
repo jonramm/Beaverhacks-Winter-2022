@@ -14,7 +14,6 @@ app.use(express.json())
 // Connect to database through mongoose
 // Skipping for now 
 
-
 // Handles GET Requests from front-end
 app.get("/api", (req, res)=> {
   const query = "Portland";
@@ -33,30 +32,7 @@ app.get("/api", (req, res)=> {
   })
 })
 
-// Handles POST Requests from front-end, single axios api call 
-// app.post("/api", async (req, res) => {
-  
-//   // Let server console know backend has received the request 
-//   console.log("Received request. Retrieving info now...");
-  
-//   // Get the city from the search bar on the front end
-//   const city = req.body.city;
-//   const page = req.body.page;
-  
-//   // send GET request to brewery api 
-//   const url = `https://api.openbrewerydb.org/breweries?per_page=50&by_city=${city}&page=${page}`;
-  
-//   // Serialize response data and send back to front end 
-//   const response = await axios.get(url);
-//   const data = response.data;
-  
-//   console.log("Request completed.");
-  
-//   res.status(200).json(data);
-  
-// });
-
-// Handles POST Requests from front-end, three bundled axios calls
+// Handles POST Requests from front-end, three bundled axios calls to handle limited data return
 app.post("/api", async (req, res) => {
   
   // Let server console know backend has received the request 
@@ -104,14 +80,11 @@ app.post("/geo", (req, res) => {
 // Endpoint for population gathering
 app.post("/population", (req, res)=> {
 
-  console.log("made it to population endpoint")
+  console.log("gathering population data...")
   const city = req.body.correctCity;
   const state = req.body.state;
-  console.log(city)
-  console.log(state)
-
   const cityData = all_the_cities.filter(searchCity => searchCity.name.match(city));
-  console.log(cityData)
+  // state/abbreviation table
   const stateObj = {
     "alabama": "AL",
     "alaska": "AK",
@@ -165,9 +138,9 @@ app.post("/population", (req, res)=> {
     "wisconsin": "WI",
     "wyoming": "WY"
   }
-
   let population = 0
   for (let el of cityData) {
+    // makes sure name and state match in the data
     if (el.name == city && el.adminCode === stateObj[state]) {
       population = el.population
     }

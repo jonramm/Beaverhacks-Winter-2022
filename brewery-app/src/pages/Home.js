@@ -30,6 +30,7 @@ function Home() {
         setBreweries(res.data)
     }
 
+    // Call data get functions on render
     useEffect(() => {
         getData()
         searchBreweries()
@@ -38,7 +39,6 @@ function Home() {
     return (
         <div class="page-container">
             <Navbar />
-
             <div class="content-wrap">
                 <div class="row home-row">
                     <div class="welcome-div col-4">
