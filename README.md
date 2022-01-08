@@ -27,8 +27,5 @@ Below the search results is a map with each brewery appearing as a marker, and c
 
 App created by:
 
-Matthew DeMichele
-Jon Ramm
-Jonathan Rockett
-Richard Silva
+Matthew DeMichele, Jon Ramm, Jonathan Rockett, and Richard Silva
 
