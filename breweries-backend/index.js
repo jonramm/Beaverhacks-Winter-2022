@@ -93,12 +93,12 @@ app.post("/geo", (req, res) => {
   const latitude = req.body.latitude;
   const longitude = req.body.longitude;
   const url = `https://api.openbrewerydb.org/breweries?per_page=20&by_dist=${latitude},${longitude}`
-  
+
   axios.get(url)
     .then((response)=> {
-      res.json(response.data)
+      let data = response.data
     })
-  
+
   })
 
 // Endpoint for population gathering
