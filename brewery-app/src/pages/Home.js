@@ -14,6 +14,7 @@ function Home() {
     const [latitude, setLatitude] = useState('');
     const [longitude, setLongitude] = useState('');
     const [breweries, setBreweries] = useState([]);
+    const page = "Home";
 
     //creating function to load ip address and get coordinates
     const getData = async () => {
@@ -36,12 +37,13 @@ function Home() {
     }, [latitude, longitude])
 
     return (
-        <div class="page-container">
-            <Navbar />
+        <div>
+            <Navbar page={page} />
 
-            <div class="content-wrap">
+            <div>
                 <div class="row home-row">
                     <div class="welcome-div col-4">
+                        <h1 class="header-text">HopHub</h1>
                         <img class="icon-img" src={icon}></img>
                         <br />
                         <div class="page-button">
@@ -57,7 +59,7 @@ function Home() {
                 </div>
             </div>
             <div class="footer bg-primary">
-                <h3 id="footerText">© Our team 2022</h3>
+                <h3>© Our team 2022</h3>
             </div>
         </div>
     )

@@ -7,10 +7,12 @@ import Navbar from '../components/pageNavbar';
 
 function Breweries() {
 
+    const page = "Breweries";
+
     return (
         <div class="page-container">
             <div class="content-wrap">
-                <Navbar />
+                <Navbar page={page} />
                 <div className="container">
                     <SearchForm />
                 </div>
