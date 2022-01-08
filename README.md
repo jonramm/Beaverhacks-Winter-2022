@@ -13,17 +13,17 @@ Once you've installed all the dependencies. You can run both applications in dev
 
 The react application will run on localhost:8000 and the express api will run on localhost:3000. 
 
-#Home Page
+# Home Page
 
 HopHub homepage assesses geolocation by your ip address then displays the ten closest breweries to you.
 
-#Search By City
+# Search By City
 
 Search By City returns all the breweries in that city, as well as the total number and a breweries per 50,000 residents figure.
 
 Below the search results is a map with each brewery appearing as a marker, and clicking on the marker reveals Name and address.
 
-#Contributors
+# Contributors
 
 App created by:
 
