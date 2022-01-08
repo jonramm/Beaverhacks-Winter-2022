@@ -26,7 +26,7 @@ h3 {
 }
 
 a {
-  color: white;
+  /* color: white; */
 }
 
 .App {
@@ -95,6 +95,14 @@ a {
 /* Brewery Search Results Styles */
 .brewery-results-header {
   padding: 5%;
+}
+
+.brewery-link {
+  color: white;
+}
+
+.brewery-data {
+  color: white;
 }
 
 .header-col-left {
@@ -168,6 +176,30 @@ tr:nth-child(odd) {
   text-align: center;
   height: 3rem;
   padding: 5px;
+}
+
+/* About Page */
+.about-box-left {
+  height: 400px;
+  margin-top: 3rem;
+  margin-right: 20px;
+  border: 4px solid #009f1b;
+}
+
+.about-box-right {
+  height: 400px;
+  margin-top: 3rem;
+  border: 4px solid #009f1b;
+}
+
+.about-img {
+  height: 150px;
+  border: 2px solid black;
+  margin-bottom: 5px;
+}
+
+.personal-website {
+  color: black;
 }
 
 #footerText {
