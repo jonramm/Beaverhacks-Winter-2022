@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import axios from 'axios'
 import BreweryList from '../components/BreweryList';
 import icon from '../images/hophub-icon.png'
+import BreweryListHomePage from '../components/BreweryListHomePage';
 
 function Home() {
 
@@ -52,7 +53,7 @@ function Home() {
                     </div>
                     <div className="col-8 ">
                         <h2>Breweries Close To You:</h2>
-                        <BreweryList breweries={breweries} />
+                        <BreweryListHomePage breweries={breweries} />
                     </div>
                 </div>
             </div>
