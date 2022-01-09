@@ -36,7 +36,7 @@ function About() {
                         <h3><u>Richard Silva</u></h3>
                         <img className="about-img" src={richImg}></img>
                         <p><a className="personal-site" href="https://github.com/SpigotTheBull" target="_blank">Visit my website!</a></p>
-                        <p>Favorite Style:</p>   
+                        <p>Favorite Style: Ale never fails </p>   
                     </div>
                 </div>
                 </div>
