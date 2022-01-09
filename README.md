@@ -1,31 +1,28 @@
-# HopHub
-[HopHub Logo](https://github.com/jonramm/Beaverhacks-Winter-2022/blob/main/brewery-app/src/images/hophub-icon.png?raw=true)
+## Inspiration 
 
-So now we have the app set up as essentially two apps: a react front-end application and an express back-end REST api. 
+HopHub is inspired by our team's collective love for a well-brewed beer. Since we love going to local breweries, we wanted to create an app that helped filter out through irrelevant results like liquor stores/grocery stores and make an app that assists us in finding good breweries wherever we are. After all, what better way to help out the beer-loving community than to make breweries easier to find, visit, and support?
 
-To use the project on your local machine, you can clone the repository. Then, use these two commands in both the brewery-app and breweries-backend directories:
+## What it does 
 
-`npm install`
+HopHub makes it incredibly easy both to find breweries near you and to explore breweries across the United States. Right from the homepage, HopHub delivers a list of the nearest breweries based on your geographical location. HopHub also provides a search feature that allows you to search for breweries based on city name. The search feature returns a list of all the breweries in a given city, displaying each brewery’s name, address, and phone number, and locates each brewery on a map, providing the exact address. 
 
-Once you've installed all the dependencies. You can run both applications in development mode by using the command in both directories:
+## How we built it 
 
-`npm start`
+We built the application as a client-server application, using Express/Node.js/Axios on the server-side and React/Bootstrap/Bootswatch on the client-side. To query information about breweries, we used the API provided by the Open Breweries DB. To retrieve demographic information about each city, we used the all-the-cities dataset. For finding a user’s current geolocation based on their IP address, we used the ipify API.  For the map feature, we leveraged the OpenLayers API. Finally, we also incorporated a fair bit of snazzy styling, utilizing custom CSS and a beautifully hand-drawn logo.
 
-The react application will run on localhost:8000 and the express api will run on localhost:3000. 
+## Challenges we ran into 
 
-# Home Page
+We found some issues with github especially challenging, as we were all working on the project voraciously and in a short timespan. There were plenty of merge conflicts and various problems when it came to commits directly to the main branch. There were also some new bugs that arose when we deployed our app through Heroku.
 
-HopHub homepage assesses geolocation by your ip address then displays the ten closest breweries to you.
+## Accomplishments that we’re proud of 
 
-# Search By City
+We're very proud of creating an aesthetically pleasing app with a very artistic logo that intuitively directs the user to local breweries or breweries in the location that the user submits. Our app's data visualization capabilities are great as well as our interactive map shows where the nearest breweries are.
 
-Search By City returns all the breweries in that city, as well as the total number and a breweries per 50,000 residents figure.
+## What we learned 
 
-Below the search results is a map with each brewery appearing as a marker, and clicking on the marker reveals Name and address.
+Through this project, we learned a great deal about building applications that use a client-server architecture. We learned how to utilize the Open Brewery API and how various APIs can run in tandem with each other in an app. There was also a considerable effort learning about IPs and how to geolocate IPs so our app could be convenient to the user. We also learned about the collaboration process, learning how to manage different branches on Github and assign roles and responsibilities to different team members without interfering with each other’s work. 
 
-# Contributors
+## What’s next for HopHub?
 
-App created by:
-
-Matthew DeMichele, Jon Ramm, Jonathan Rockett, and Richard Silva
+After the Hackathon, we'd like to keep the site live! We’re working on deploying the application as we speak!
 
