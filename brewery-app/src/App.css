@@ -80,7 +80,8 @@ a {
 }
 
 .background-image {
-  max-width: 100%;
+  width: 1440px;
+  height: 600px;
   object-fit: cover;
   opacity: 0.4;
 }
@@ -92,12 +93,14 @@ a {
 }
 
 .welcome-div {
+  background-color: antiquewhite;
   position: absolute;
   left: 50%;
   top: 10%;
-  padding-top: 5%;
-  padding-bottom: 10%;
+  margin-top: 5%;
+  margin-bottom: 10%;
   margin-left: -210px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .page-button {
@@ -123,6 +126,12 @@ a {
   color: black;
   text-decoration: underline;
   font-weight: bolder;
+  margin-top: 2%; 
+}
+
+.brewery-list-text:hover {
+
+  cursor: pointer;
 }
 
 #brewery-list-modal {
@@ -224,6 +233,7 @@ tr:nth-child(odd) {
 /* Footer */
 
 .footer {
+  position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;

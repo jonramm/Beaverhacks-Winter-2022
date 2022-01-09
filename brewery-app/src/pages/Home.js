@@ -64,7 +64,6 @@ function Home() {
                 <div class="home-row">
                     <img class="background-image" src={bar}></img>
                     <div class="welcome-div">
-                        <h1 class="header-text">HopHub</h1>
                         <img class="icon-img" src={icon}></img>
                         <br />
                         <div className="page-button">
