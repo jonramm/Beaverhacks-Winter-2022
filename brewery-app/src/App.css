@@ -176,3 +176,9 @@ tr:nth-child(odd) {
   font-weight: bold;
   color: white;
 }
+
+/* Visualization Page */
+.visualization-by-city-container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
