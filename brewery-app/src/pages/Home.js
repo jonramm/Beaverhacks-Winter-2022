@@ -59,7 +59,7 @@ function Home() {
 
     return (
         <div>
-            <Navbar />
+            <Navbar page={page}/>
             <div class="home-content">
                 <div class="home-row">
                     <img class="background-image" src={bar}></img>
