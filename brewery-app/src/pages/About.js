@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from '../components/pageNavbar';
 import jonImg from '../images/github-prof-img.jpg'
 import beerStein from '../images/beer-stein.png';
+import mattHeadshot from '../images/matt-headshot.jpg';
 
 function About() {
     const page = "About";
@@ -14,9 +15,9 @@ function About() {
                 <div className="row gx-5">
                     <div className="col about-box-left p-3 bg-light">
                         <h3><u>Matthew DeMichele</u></h3> 
-                        <img className="about-img" src={beerStein}></img>
-                        <p><a className="personal-site" href="" target="_blank">Visit my website!</a></p>
-                        <p>Favorite Style:</p>                
+                        <img className="about-img" src={mattHeadshot}></img>
+                        <p><a className="personal-site" href="https://mattdemichele.co" target="_blank">Visit my website!</a></p>
+                        <p>Favorite Style: IPA always!</p>                
                     </div>
                     <div className="col about-box-left p-3 bg-light">
                         <h3><u>Jon Ramm</u></h3>
