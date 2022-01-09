@@ -44,7 +44,7 @@ a {
 }
 
 .content-wrap {
-  padding-bottom: 5rem;
+  padding: 0 5rem 5rem;
 }
 
 /* Navbar */
@@ -71,9 +71,9 @@ a {
 }
 
 .icon-img {
-  width: 520px;
+  width: 480px;
   height: auto;
-  margin-top: -40px;
+  margin: 3rem 0 2rem;
 }
 
 .welcome-div {
@@ -83,10 +83,6 @@ a {
 
 .page-button {
   font-family: 'Nunito', sans-serif;
-}
-
-.home-row {
-  margin-right: 5%;
 }
 
 /* Brewery Search Results Styles */

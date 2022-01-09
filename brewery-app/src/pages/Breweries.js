@@ -10,8 +10,8 @@ function Breweries() {
 
     return (
         <div className="page-container">
+            <Navbar page={page} />
             <div className="content-wrap">
-                <Navbar page={page} />
                 <div className="container">
                     <SearchForm />
                 </div>
