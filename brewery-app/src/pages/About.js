@@ -43,7 +43,7 @@ function About() {
                 </div>
             </div>
             <div className="footer bg-primary">
-                <h3 id="footerText">© Our team 2022</h3>
+                <h3 id="footerText">© Hop Boyz 2022</h3>
             </div>
         </div>
     )
