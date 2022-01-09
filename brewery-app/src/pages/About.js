@@ -3,6 +3,7 @@ import Navbar from '../components/pageNavbar';
 import jonImg from '../images/github-prof-img.jpg'
 import beerStein from '../images/beer-stein.png';
 import mattHeadshot from '../images/matt-headshot.jpg';
+import richImg from '../images/richimg.jpg'
 
 function About() {
     const page = "About";
@@ -33,8 +34,8 @@ function About() {
                     </div>
                     <div className="col about-box-right p-3 bg-light">
                         <h3><u>Richard Silva</u></h3>
-                        <img className="about-img" src={beerStein}></img>
-                        <p><a className="personal-site" href="" target="_blank">Visit my website!</a></p>
+                        <img className="about-img" src={richImg}></img>
+                        <p><a className="personal-site" href="https://github.com/SpigotTheBull" target="_blank">Visit my website!</a></p>
                         <p>Favorite Style:</p>   
                     </div>
                 </div>
