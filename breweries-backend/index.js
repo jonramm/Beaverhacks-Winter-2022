@@ -6,12 +6,20 @@ import axios from 'axios';
 import all_the_cities from 'all-the-cities';
 import csv from 'csv-parser';
 import fs from 'fs';
+import path from 'path';
 
 // Declare instance of express 
 const app = express();
 
+const __dirname = path.resolve();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json())
+
+// For production build and deployment
+app.use(express.static(path.join(__dirname, 'build')));
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 // Connect to database through mongoose
 // Skipping for now 

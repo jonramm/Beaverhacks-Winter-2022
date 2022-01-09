@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fda8e6eb.css",
+    "main.js": "/static/js/main.6b6ad891.js",
+    "static/js/787.13ef44fb.chunk.js": "/static/js/787.13ef44fb.chunk.js",
+    "static/media/hophubhopper-right.png": "/static/media/hophubhopper-right.fa0420bf735442c3a33c.png",
+    "static/media/hophub-icon-cropped.png": "/static/media/hophub-icon-cropped.add9a86c189d91b9d2ad.png",
+    "static/media/matt-headshot.jpg": "/static/media/matt-headshot.8687066976cf17a5c772.jpg",
+    "static/media/beer-stein.png": "/static/media/beer-stein.c21c12540343937e22b6.png",
+    "static/media/github-prof-img.jpg": "/static/media/github-prof-img.c148b708f6c94c914362.jpg",
+    "index.html": "/index.html",
+    "main.fda8e6eb.css.map": "/static/css/main.fda8e6eb.css.map",
+    "main.6b6ad891.js.map": "/static/js/main.6b6ad891.js.map",
+    "787.13ef44fb.chunk.js.map": "/static/js/787.13ef44fb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fda8e6eb.css",
+    "static/js/main.6b6ad891.js"
+  ]
+}
