@@ -36,6 +36,24 @@ function Home() {
         searchBreweries()
     }, [latitude, longitude])
 
+    function showModal() {
+
+        var modal = document.getElementById('brewery-list-modal');
+        var modalBackdrop = document.getElementById('modal-backdrop');
+      
+        modal.classList.remove('hidden');
+        modalBackdrop.classList.remove('hidden');
+    }
+
+    function hideModal() {
+
+        var modal = document.getElementById('brewery-list-modal');
+        var modalBackdrop = document.getElementById('modal-backdrop');
+      
+        modal.classList.add('hidden');
+        modalBackdrop.classList.add('hidden');
+    }
+
     return (
         <div>
             <Navbar />
@@ -51,10 +69,22 @@ function Home() {
                                 <Button variant="primary">Search By City</Button>
                             </Link>
                         </div>
+                        <p class="brewery-list-text" onClick={showModal}>Or look at a list of breweries near your location</p>
                     </div>
-                    <div class="brewery-list">
+                </div>
+            </div>
+            <div class="home-modal">
+                <div id="modal-backdrop" class="hidden"></div>
+                <div id="brewery-list-modal" class="hidden">
+                    <div class="modal-header">
                         <h2>Breweries Close To You:</h2>
-                        <BreweryList breweries={breweries} />
+                        <button type="button" id="modal-close" class="modal-hide-button" onClick={hideModal}>&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="brewery-list">
+                            <BreweryList breweries={breweries} />
+                        </div>
                     </div>
                 </div>
             </div>
