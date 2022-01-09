@@ -7,6 +7,7 @@ import all_the_cities from 'all-the-cities';
 import csv from 'csv-parser';
 import fs from 'fs';
 import path from 'path';
+import server from 'server';
 
 // Declare instance of express 
 const app = express();
