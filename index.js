@@ -273,7 +273,7 @@ app.get('/api/breweries-geojson', async (req, res) => {
 });
 
 // Start Server 
-app.listen(3000, LOCAL_ADDRESS, () => {
-  const address = server.address();
+app.listen(PORT, LOCAL_ADDRESS, () => {
+  // const address = server.address()
   console.log(`Server running on port ${PORT}. Hacking time!!`)
 })
