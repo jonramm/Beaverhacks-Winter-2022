@@ -5,8 +5,9 @@ import Navbar from '../components/pageNavbar';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios'
 import BreweryList from '../components/BreweryList';
-import icon from '../images/hophub-icon.png';
 import bar from '../images/bar.jpg';
+import icon from '../images/hophub-icon-cropped.png'
+import BreweryListHomePage from '../components/BreweryListHomePage';
 
 function Home() {
 
@@ -15,6 +16,7 @@ function Home() {
     const [latitude, setLatitude] = useState('');
     const [longitude, setLongitude] = useState('');
     const [breweries, setBreweries] = useState([]);
+    const page = "Home";
 
     //creating function to load ip address and get coordinates
     const getData = async () => {
@@ -31,6 +33,7 @@ function Home() {
         setBreweries(res.data)
     }
 
+    // Call data get functions on render
     useEffect(() => {
         getData()
         searchBreweries()
@@ -64,7 +67,7 @@ function Home() {
                         <h1 class="header-text">HopHub</h1>
                         <img class="icon-img" src={icon}></img>
                         <br />
-                        <div class="page-button">
+                        <div className="page-button">
                             <Link to='/breweries'>
                                 <Button variant="primary">Search By City</Button>
                             </Link>
@@ -73,23 +76,25 @@ function Home() {
                     </div>
                 </div>
             </div>
-            <div class="home-modal">
-                <div id="modal-backdrop" class="hidden"></div>
-                <div id="brewery-list-modal" class="hidden">
-                    <div class="modal-header">
-                        <h2>Breweries Close To You:</h2>
-                        <button type="button" id="modal-close" class="modal-hide-button" onClick={hideModal}>&times;</button>
-                    </div>
+            <div className="home-modal">
+                <div id="modal-backdrop" className="hidden"></div>
+                <div id="brewery-list-modal" className="hidden">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h2>Breweries Close To You:</h2>
+                            <Button variant="primary" onClick={hideModal}>X</Button>
+                        </div>
 
-                    <div class="modal-body">
-                        <div class="brewery-list">
-                            <BreweryList breweries={breweries} />
+                        <div className="modal-body">
+                            <div className="brewery-list">
+                                <BreweryListHomePage breweries={breweries} />
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="footer bg-primary">
-                <h3>© Our team 2022</h3>
+            <div className="footer bg-primary">
+                <h3 id="footerText">© Our team 2022</h3>
             </div>
         </div>
     )

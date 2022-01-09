@@ -3,18 +3,27 @@
 body {
   font-family: 'Saira Condensed', sans-serif;
   font-size: 1.5rem;
+  font-weight: bold;
+  background-color: antiquewhite;
 }
 
 h1 {
-  font-family: 'Nunito', sans-serif;
   font-weight: bold;
   font-size: 5rem;
 }
 
 h2 {
-  font-family: 'Nunito', sans-serif;
   font-weight: bold;
   font-size: 3rem;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+a {
+  /* color: white; */
 }
 
 .App {
@@ -27,6 +36,16 @@ h2 {
 
 .container {
   margin-left: auto;
+}
+
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  padding: 0 5rem 5rem;
+  margin-top: 2%;
 }
 
 /* Navbar */
@@ -67,15 +86,15 @@ h2 {
 }
 
 .icon-img {
-  width: 420px;
+  width: 480px;
   height: auto;
-  margin-top: -40px;
+  margin: 3rem 0 2rem;
 }
 
 .welcome-div {
   position: absolute;
   left: 50%;
-  top: 20%;
+  top: 10%;
   padding-top: 5%;
   padding-bottom: 10%;
   margin-left: -210px;
@@ -85,8 +104,14 @@ h2 {
   font-family: 'Nunito', sans-serif;
 }
 
-.modal {
-  box-shadow: -5px -5px 5px 5px #888888;
+.modal-content {
+  width: auto;
+  max-width: 1400px;
+  min-width: 350px;
+  min-height: 300px;
+  margin: 40px auto;
+  background-color: antiquewhite;
+  border-radius: 15px;
 }
 
 .hidden {
@@ -115,6 +140,14 @@ h2 {
   padding: 5%;
 }
 
+.brewery-link {
+  color: white;
+}
+
+.brewery-data {
+  color: white;
+}
+
 .header-col-left {
   padding-right: 3%;
 }
@@ -137,6 +170,23 @@ h1.display-1 {
   border-bottom: 3px solid #bbb;
 }
 
+.brewery-table {
+  font-size: 1.3rem;
+  color: white;
+}
+
+.table {
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #005017;
+}
+
+tr:nth-child(odd) {
+  background-color: #009f1b;
+}
+
 /* Search Bar Styles */
 .form-label {
   font-size: 2rem;
@@ -150,6 +200,11 @@ h1.display-1 {
   margin-top: 1%;
 }
 
+.mb-3 {
+
+  margin-top: 7%;
+}
+
 /* Brewery Map Styles */
 .brewery-map-container {
   width: 1000px;
@@ -161,15 +216,54 @@ h1.display-1 {
   height: 800px;
 }
 
+.stein-img {
+  width: 400px;
+  height: auto;
+}
+
 /* Footer */
 
 .footer {
-  position: relative;
-  overflow: hidden;
   left: 0;
   bottom: 0;
   width: 100%;
   text-align: center;
-  padding-top: 10px;
-  margin-top: 10px;
+  height: 3rem;
+  padding: 5px;
+}
+
+/* About Page */
+.about-box-left {
+  height: 400px;
+  margin-top: 3rem;
+  margin-right: 20px;
+  border: 4px solid #009f1b;
+}
+
+.about-box-right {
+  height: 400px;
+  margin-top: 3rem;
+  border: 4px solid #009f1b;
+}
+
+.about-title {
+
+  margin-top: 2%;
+}
+
+.about-img {
+  height: 150px;
+  border: 2px solid black;
+  margin-bottom: 5px;
+}
+
+.personal-website {
+  color: black;
+}
+
+#footerText {
+  font-family: 'Saira Condensed', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
 }

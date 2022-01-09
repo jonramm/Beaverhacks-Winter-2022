@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import BreweryRow from "./BreweryRow";
+import React from "react";
+import BreweryRowHomePage from "./BreweryRowHomePage";
 
-function BreweryList({ breweries }) {
+function BreweryListHomePage({ breweries }) {
 
     return (
         <div>
@@ -10,15 +10,16 @@ function BreweryList({ breweries }) {
                     <tr>
                         <th scope="col"><h3>Name</h3></th>
                         <th scope="col"><h3>Street</h3></th>
+                        <th scope="col"><h3>City</h3></th>
                         <th scope="col"><h3>Phone</h3></th>
                     </tr>
                 </thead>
                 <tbody>
-                    {breweries.map((brewery, i) => <BreweryRow data={brewery} key={i} />)}
+                    {breweries.map((brewery, i) => <BreweryRowHomePage data={brewery} key={i} />)}
                 </tbody>
             </table>
         </div>
     )
 }
 
-export default BreweryList;
+export default BreweryListHomePage;
