@@ -44,8 +44,8 @@ a {
 }
 
 .content-wrap {
-  padding: 0 5rem 5rem;
-  margin-top: 2%;
+  padding: 0 5rem 6rem;
+  margin-top: 5%;
 }
 
 /* Navbar */
@@ -80,8 +80,7 @@ a {
 }
 
 .background-image {
-  width: 1440px;
-  height: 600px;
+  max-width: 100%;
   object-fit: cover;
   opacity: 0.4;
 }
@@ -132,6 +131,7 @@ a {
 .brewery-list-text:hover {
 
   cursor: pointer;
+  color: darkorange;
 }
 
 #brewery-list-modal {
@@ -233,7 +233,7 @@ tr:nth-child(odd) {
 /* Footer */
 
 .footer {
-  position: absolute;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
