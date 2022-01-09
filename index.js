@@ -11,7 +11,9 @@ import path from 'path';
 // Declare instance of express 
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+// const PORT = process.env.PORT || 3000;
+const { PORT=3000, LOCAL_ADDRESS='0.0.0.0' } = process.env
+
 const __dirname = path.resolve();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json())
@@ -270,6 +272,7 @@ app.get('/api/breweries-geojson', async (req, res) => {
 });
 
 // Start Server 
-app.listen(3000, () => {
+app.listen(3000, LOCAL_ADDRESS, () => {
+  const address = server.address();
   console.log(`Server running on port ${PORT}. Hacking time!!`)
 })
