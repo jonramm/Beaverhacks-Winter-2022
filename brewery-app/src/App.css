@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Saira Condensed', sans-serif;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
   font-weight: bold;
   background-color: antiquewhite;
 }
@@ -50,13 +50,13 @@ a {
 
 /* Navbar */
 .navbar-brand {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bolder;
   padding-left: 1%;
 }
 
 .hopper {
-  width: 260px;
+  width: 240px;
   height: auto;
   margin: -50px;
   margin-bottom: -70px;
@@ -64,8 +64,11 @@ a {
   margin-right: -80px;
 }
 
-.navbar {
+.nav-link {
+  font-size: 1.2rem;
+}
 
+.navbar {
   box-shadow: 0px 5px 10px #888888
 }
 
@@ -83,19 +86,22 @@ a {
   max-width: 100%;
   object-fit: cover;
   opacity: 0.4;
+
 }
 
 .icon-img {
-  width: 480px;
+  width: 440px;
   height: auto;
   margin: 3rem 0 2rem;
 }
 
 .welcome-div {
   background-color: antiquewhite;
+  border-radius: 10%;
   position: absolute;
   left: 50%;
-  top: 14%;
+  top: 10%;
+  padding-bottom: 3%;
   margin-top: 5%;
   margin-bottom: 10%;
   margin-left: -210px;

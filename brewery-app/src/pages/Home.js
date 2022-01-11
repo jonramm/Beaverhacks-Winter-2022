@@ -71,7 +71,7 @@ function Home() {
                                 <Button variant="primary">Search By City</Button>
                             </Link>
                         </div>
-                        <p class="brewery-list-text" onClick={showModal}>Or look at a list of breweries near your location</p>
+                        {/* <p class="brewery-list-text" onClick={showModal}>Or look at a list of breweries near your location</p> */}
                     </div>
                 </div>
             </div>
