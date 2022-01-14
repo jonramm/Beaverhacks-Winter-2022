@@ -1,5 +1,6 @@
 <!-- ![hophub logo](./brewery-app/src/images/hophub-icon-cropped.png) -->
-<img src="./brewery-app/src/images/hophub-icon-cropped.png" alt="hophub icon" width=50% height=auto text-align=center>
+<img src="./brewery-app/src/images/hophub-icon-cropped.png" alt="hophub icon" width=50% height=auto>
+<a href="www.thehophub.com">www.thehophub.com</a>
 
 ## Inspiration 
 
