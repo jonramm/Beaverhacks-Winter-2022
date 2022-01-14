@@ -14,8 +14,8 @@ function PageNavbar ({ page }) {
             <Container fluid>
                 <img className="hopper" src={hopper}></img>
                 <Navbar.Brand href="/">HopHub</Navbar.Brand>
-                <Navbar.Toggle aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" />
-                <Navbar.Collapse id="navbarColor01">
+                <Navbar.Toggle aria-controls="basic-navbar-nav" aria-expanded="false" aria-label="Toggle navigation" />
+                <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <HomeNav page={page} />
                         <BreweriesNav page={page} />

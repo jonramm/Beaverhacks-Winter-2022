@@ -60,6 +60,7 @@ a {
 
 .home-content {
   height: 80%;
+  width: 100%;
 }
 
 /* Navbar */
@@ -67,6 +68,10 @@ a {
   font-size: 2.5rem;
   font-weight: bolder;
   padding-left: 1%;
+}
+
+.show {
+  background-color: rgba(var(--bs-primary-rgb),var(--bs-bg-opacity))!important;
 }
 
 .hopper {
@@ -315,5 +320,10 @@ tr:nth-child(odd) {
 }
 
 @media only screen and (max-width: 600px) {
-
+  .stein-col {
+    display: none;
+  }
+  .icon-img {
+    width: 340px;
+  }
 }

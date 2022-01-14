@@ -53,7 +53,7 @@ function SearchForm() {
         return (
             <div>
                 <div className="row">
-                    <div className="col">
+                    <div className="col stein-col">
                         <img className="stein-img" src={stein}></img>
                     </div>
                     <div className="col">
