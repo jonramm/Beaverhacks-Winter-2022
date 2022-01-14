@@ -1,4 +1,5 @@
-![hophub logo](./brewery-app/src/images/hophub-icon-cropped.png | width=100)
+<!-- ![hophub logo](./brewery-app/src/images/hophub-icon-cropped.png) -->
+<img src="./brewery-app/src/images/hophub-icon-cropped.png" alt="hophub icon" width=100px height=100px>
 
 ## Inspiration 
 
