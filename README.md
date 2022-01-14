@@ -1,3 +1,5 @@
+![hophub logo](./brewery-app/src/images/hophub-icon-cropped.png)
+
 ## Inspiration 
 
 HopHub is inspired by our team's collective love for a well-brewed beer. Since we love going to local breweries, we wanted to create an app that helped filter out through irrelevant results like liquor stores/grocery stores and make an app that assists us in finding good breweries wherever we are. After all, what better way to help out the beer-loving community than to make breweries easier to find, visit, and support?
