@@ -58,11 +58,13 @@ function Home() {
     }
 
     return (
-        <div>
+        <div className="home-page">
             <Navbar page={page}/>
             <div class="home-content">
                 <div class="home-row">
-                    <img class="background-image" src={bar}></img>
+                    {/* <div className="background-wrapper">
+                        <img class="background-image" src={bar}></img>
+                    </div>                   */}
                     <div class="welcome-div">
                         <img class="icon-img" src={icon}></img>
                         <br />
@@ -92,9 +94,9 @@ function Home() {
                     </div>
                 </div>
             </div>
-            <div className="footer bg-primary">
+            <footer className="footer bg-primary">
                 <h3 id="footerText">© Hop Boyz 2022</h3>
-            </div>
+            </footer>
         </div>
     )
 }
