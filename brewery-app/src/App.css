@@ -326,4 +326,20 @@ tr:nth-child(odd) {
   .icon-img {
     width: 340px;
   }
+  .search-map {
+    height: 340px;
+    width: 340px;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  .brewery-map-container {
+    width: 100%;
+  }
+  .brewery-table {
+    width: 100%;
+  }
+  .content-wrap {
+    padding: 0 1rem 3rem;
+  }
 }
