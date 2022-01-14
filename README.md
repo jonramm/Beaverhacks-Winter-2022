@@ -1,4 +1,4 @@
-![hophub logo](./brewery-app/src/images/hophub-icon-cropped.png =250x250)
+![hophub logo](./brewery-app/src/images/hophub-icon-cropped.png | width=100)
 
 ## Inspiration 
 
